@@ -1,0 +1,21 @@
+.forms{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: lightpink;
+    align-items: center;
+    justify-content: center;
+    width:200px;
+}
+
+.content-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.forms input{
+    width:fit-content
+}
