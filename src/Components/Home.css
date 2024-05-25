@@ -1,0 +1,173 @@
+.home{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+.first-line{
+  display: flex;
+  align-items: center;
+  flex-wrap:none;
+  justify-content: space-around;
+  padding-bottom: 2.7rem;
+}
+
+.slogam{
+  border-radius: 12px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 2px;
+  color:black;
+  background-color:#f9f9f9;
+  padding:4px 4px;
+  transition: box-shadow 0.3s ease,transform 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.slogam p{
+  font-weight: bold;
+  color: maroon;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.gallery{
+  width:70rem;
+  padding-bottom: 5rem;
+  height:30rem;
+  margin-bottom:10rem;
+}
+
+.gallery h2{
+  font-size: 2rem;
+  color: maroon;
+  line-height:60px;
+  text-align: center;
+}
+
+.amenities {
+  animation: slideInFromLeft 1s ease-out forwards;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+  padding: 3rem;
+  background-color: maroon;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width:70rem
+}
+
+.amenities-gallery{
+  width:20rem;
+  height:20rem;
+  object-fit:cover;
+}
+
+.amenities-text {
+  max-width: 400px;
+  text-align:right;
+  margin-left: 1.5rem;;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+  flex: 1;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .first-line{
+    justify-content: space-around;
+    padding-bottom: 1.5rem;
+    flex-wrap:wrap
+  }
+
+  .image {
+    max-width: 100%; 
+  }
+
+  .slogam{
+    margin:10px;
+  }
+
+  .gallery h2{
+    font-size: 1.5rem;
+  }
+  
+  .amenities {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:25rem
+
+  }
+
+  .amenities-text {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .gallery{
+    width:30rem;
+    margin-bottom: 0;
+  }
+
+  .amenities-gallery{
+    width:20rem;
+    margin-bottom: 0;
+    height:20rem;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .first-line{
+    justify-content: space-around;
+    padding-bottom: 1.5rem;
+    flex-wrap:wrap
+  }
+
+  .image {
+    max-width: 100%; 
+  }
+
+  .slogam{
+    margin:10px;
+  }
+
+  .gallery h2{
+    font-size: 1.5rem;
+  }
+
+  .amenities {
+    margin: 1.5rem;
+  }
+
+  .amenities-text {
+    font-size: 0.8rem;
+  }
+  
+}

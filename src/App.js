@@ -1,25 +1,35 @@
 import 'react-router-dom';
-import React,{useState} from 'react';
 import Home from './Components/Home';
-import  Login from './Components/Login';
 import Navbar from './Components/Navbar';
-import Services from './Components/Services';
-import Contact from './Components/Contact';
-import About from './Components/About';
+import Upadevas from './Components/Upadevas';
+import Activities from './Components/Activities';
+import Festivals from './Components/Festivals';
+import OriginandHistory from './Components/OriginandHistory'; 
+import Footer from './Components/Footer';
+import ImageGallery from './Components/Gallery';
+import Vazhipad from './Components/Vazhipad';
 import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom'; 
+import OfficeBearers from './Components/OfficeBearers';
 
 function App() {
   return (    
     <Router>
       <div className="App">
         <Navbar/>
-        <Routes>
-          <Route path='/' element = {<Home/>}/>
-          <Route path='/login' element = {<Login/>}/>
-          <Route path='/services' element = {<Services/>}/>
-          <Route path='/contact' element = {<Contact/>}/>
-          <Route path='/about' element = {<About/>}/>
-        </Routes>
+        <div className='content'>
+          <Routes>
+            <Route path='/' element = {<Home/>}/>
+            <Route path='/origin&history' element = {<OriginandHistory/>}/>
+            <Route path='/activities' element = {<Activities/>}/>
+            <Route path='/upadevas' element = {<Upadevas/>}/>
+            <Route path='/festivals' element = {<Festivals/>}/>
+            <Route path='/learn-more' element = {<Vazhipad/>}/>
+            <Route path='/image-gallery' element = {<ImageGallery/>}/>
+            <Route path='/office-bearers' element = {<OfficeBearers/>}/>
+            
+          </Routes>
+        </div>
+        <Footer/>
       </div>
     </Router>
   );

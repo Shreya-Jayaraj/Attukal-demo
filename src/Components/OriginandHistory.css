@@ -1,0 +1,44 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+.oh-container h1{
+    text-align: center;
+    color:maroon
+}
+
+.oh-card{
+    display:flex;
+    justify-content: space-around;
+    align-items: space-around;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    flex-wrap: wrap;
+    animation:fadeIn 0.5s ease forwards;
+
+}
+
+.oh-card p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 60rem;;
+    line-height: 30px;
+    padding: 15px 15px;
+    text-align: left;
+    background-color: rgb(250, 245, 245);
+    border: black solid 1px;
+    box-shadow: black 2px;
+    border-radius: 10px;
+}
+
+.oh-card img{
+    max-height:20rem;
+    max-width: 15rem;
+    padding: 10px 10px;
+}

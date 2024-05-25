@@ -1,0 +1,53 @@
+.footer-section-padding{
+    padding: 0.5rem 0.5rem;
+}
+
+.footer{
+    background-color:maroon;
+    text-align: center;
+    color: white;
+    z-index:10;
+}
+
+.footer-heading{
+    padding-bottom:12px;
+}
+
+
+
+.footer-links{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-link{
+    display: flex;
+    align-items: center;
+}
+
+.call-image{
+    width: 25px;
+}
+
+.mail-image{
+    width: 40px;
+}
+
+.location-image{
+    width: 40px;
+}
+.location-text{
+    text-align: left;
+    line-height: 0.5rem;
+    font-size: 13px;;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
+}
+
+.footer-below {
+    padding-top: 15px;
+    font-size: 0.9em;
+}

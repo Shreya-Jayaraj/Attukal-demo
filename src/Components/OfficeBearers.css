@@ -1,0 +1,96 @@
+
+.office-bearers-container {
+    padding: 50px;
+}
+.office-bearers-container h2{
+    color:maroon;
+    text-align: center;
+    padding:20px;
+    font-size: 2rem;
+}
+
+.office-bearers-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.office-bearer-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.office-bearer-card:hover {
+    transform: scale(1.05);
+}
+
+.office-bearer-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.office-bearer-details h3 {
+    margin: 10px 0;
+    color: rgb(183, 0, 0);
+}
+
+.office-bearer-details p {
+    margin: 5px 0;
+    color: #555;
+}
+.office-bearers-button-container {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.office-bearers-btn {
+    background-color: rgb(183, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.office-bearers-btn:hover {
+    background-color: rgb(150,0,0);
+}
+
+/*office bearers page*/
+
+.office-bearers-cards2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 200px;
+    justify-content: center;
+}
+
+.office-bearer-card2 {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.office-bearer-card2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}

@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 const Navbar = () => {
 
-    const [menuOpen, setMenuOpen] = useState('false')
+    const [menuOpen, setMenuOpen] = useState(false)
+    const [toggleOpen, setToggleOpen] = useState(false)
     return ( 
         <nav>
             <Link to='/' className='title'> Attukal Bhagavathy Temple
@@ -20,14 +21,27 @@ const Navbar = () => {
             
             <ul className={menuOpen ? "open" : ""}>
                 <li>
-                    <NavLink to='/about'> Origin & History</NavLink>  
+                    <NavLink to='/origin&history'> Origin & History</NavLink>  
                 </li>
                 <li>  
-                    <NavLink to='/services'> Services</NavLink>  
+                    <NavLink to='/office-bearers'> Office Bearers</NavLink>  
                 </li>
                 <li>  
-                    <NavLink to='/contact'> Contact</NavLink>   
+                    <NavLink to='/activities'> Activities</NavLink>   
                 </li>
+                <li>  
+                    <NavLink to='/festivals'> Festivals</NavLink>   
+                </li>
+
+                {/* <li>
+                        <div className='menu' onClick={() =>{
+                        setToggleOpen(!toggleOpen)
+                    }}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </li>                 */}
             </ul>
         </nav>
      );
