@@ -12,7 +12,7 @@
 .office-bearers-cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
 }
 
@@ -20,8 +20,8 @@
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 200px;
-    padding: 20px;
+    width: 170px;
+    padding: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -32,7 +32,7 @@
 }
 
 .office-bearer-card img {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 50%;
     margin-bottom: 15px;
@@ -73,7 +73,7 @@
 .office-bearers-cards2 {
     display: flex;
     flex-wrap: wrap;
-    gap: 200px;
+    gap: 10px;
     justify-content: center;
 }
 
@@ -89,7 +89,7 @@
 }
 
 .office-bearer-card2 img {
-    width: 100%;
+    width: 70%;
     height: auto;
     border-radius: 50%;
     margin-bottom: 15px;

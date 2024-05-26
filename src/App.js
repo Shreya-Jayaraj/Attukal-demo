@@ -10,10 +10,12 @@ import ImageGallery from './Components/Gallery';
 import Vazhipad from './Components/Vazhipad';
 import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom'; 
 import OfficeBearers from './Components/OfficeBearers';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   return (    
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Navbar/>
         <div className='content'>

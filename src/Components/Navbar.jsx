@@ -1,6 +1,7 @@
 import './Navbar.css';
 import {NavLink, Link} from 'react-router-dom';
 import { useState } from 'react';
+import home from '../assets/home.png';
 
 const Navbar = () => {
 
@@ -8,8 +9,10 @@ const Navbar = () => {
     const [toggleOpen, setToggleOpen] = useState(false)
     return ( 
         <nav>
-            <Link to='/' className='title'> Attukal Bhagavathy Temple
-            </Link>  
+            <div className='left-section'>
+                <img src={home} alt="Home" className='home-icon' />
+                <Link to='/' className='title'>Attukal Bhagavathy Temple</Link>
+            </div>  
 
             <div className='menu' onClick={() =>{
                 setMenuOpen(!menuOpen)

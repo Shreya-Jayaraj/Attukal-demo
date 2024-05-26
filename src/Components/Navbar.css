@@ -12,14 +12,26 @@ nav{
     z-index:10;
 }
 
+.left-section {
+    display: flex;
+    align-items: center;
+}
 nav .title{
     font-size: 1.5rem;
     margin: 1rem;
     font-weight:bold;
     text-decoration: none;
     color: white;
+    text-align: left;
+    
+    
 }
-
+.home-icon {
+    margin-right: 10px;
+    width: 50px; 
+    height: 50px; 
+    
+}
 nav ul{
     display: flex;
 }
@@ -90,4 +102,3 @@ nav .menu span {
         margin: 0.2rem 0.5rem;
     }
 }
-

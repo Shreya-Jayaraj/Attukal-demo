@@ -34,7 +34,7 @@
 }
 
 .a-container{
-    animation:scroll-up 10s linear infinite;
+    animation:scroll-up 20s linear infinite;
     position: absolute;
     padding-top: 1rem;
     margin-right: 0.4rem;

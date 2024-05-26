@@ -93,6 +93,7 @@
   font-size: 1rem;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
 }
 .card p {
   font-size: 0.75rem;

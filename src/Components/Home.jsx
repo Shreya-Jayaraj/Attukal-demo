@@ -12,42 +12,52 @@ import Modal from './Modal';
 import AmenitiesImages from './AmenitiesImages';
 import './OfficeBearers.css';
 
+
+import SVenugopal from '../assets/SVenugopal.png';
+import Vsobha from '../assets/Vsobha.png';
+import PKkrishnannair from '../assets/PKkrishnannair.png';
+import Saratkumar from '../assets/Saratkumar.png';
+import ASanumodh from '../assets/ASanumodh.png';
+import Geethakumari from '../assets/Geethakumari.png';
+
 const Home = () => {
 
 
     const [cards] = useState([
         {
-            title: 'Vazhipad -1',
+            title: 'Udayasthamana Pooja',
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
         },
         {
-            title: 'Vazhipad -2',
+            title: 'Ardha Dina Pooja',
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
         },
         {
-            title: 'Vazhipad -3',
+            title: 'Bhagavathi Seva',
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
         },
         {
-            title: 'Vazhipad -4',
+            title: 'Chuttuvilakku',
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
         },
         {
-            title: 'Vazhipad -5',
+            title: 'Kamba Vilakku',
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
         },
         {
-            title: 'Vazhipad -6',
+            title: 'Leksharchana   (including flowers)',
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
         },
 
     ]);
-
     const [officeBearers] = useState([
-        { name: 'John Doe', position: 'President', image: devi2, description: 'John Doe is the president.' },
-        { name: 'Jane Smith', position: 'Vice President', image: devi2, description: 'Jane Smith is the vice president.' },
-        { name: 'Jim Brown', position: 'Secretary', image: devi2, description: 'Jim Brown is the secretary.' },
-        { name: 'Jill White', position: 'Treasurer', image: devi2, description: 'Jill White is the treasurer.'},
+        { name: 'Sri S Venugopal', position: 'Chairman', image: SVenugopal  },
+        { name: 'Smt V Sobha', position: 'President', image: Vsobha  },
+        { name: 'Sri P.K. Krishnan Nair', position: 'Vice President', image: PKkrishnannair  },
+        { name: 'Sri Sarat Kumar', position: 'Secretary', image: Saratkumar  },
+        { name: 'Sri A.S. Anumodh', position: 'Join Secretary', image: ASanumodh  },
+        { name: 'Smt Geetha Kumari.A', position: 'Treasurer', image: Geethakumari  },
+        
     ]);
 
     const [showModal, setShowModal ] = useState(false);
@@ -173,7 +183,6 @@ const Home = () => {
                             <div className="office-bearer-details">
                                 <h3>{bearer.name}</h3>
                                 <p>{bearer.position}</p>
-                                <p>{bearer.description}</p>
                             </div>
                         </div>
                     ))}
