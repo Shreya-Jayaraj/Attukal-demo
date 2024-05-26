@@ -87,7 +87,9 @@ const Home = () => {
     return (
         <div className='home'>
             <div className='first-line'>
-                <Announcements />
+                <div className="announcement-flex">
+                    <Announcements />
+                </div>
                 <div className="image-flex">
                     <img className="image" src={devihome} alt="devi-image"></img>
                     <div className="slogam">
@@ -95,7 +97,9 @@ const Home = () => {
                         <p>ശരണ്യേ ത്ര്യംബകേ ഗൗരി നാരായണി നമോയസ്തു തേ ॥</p>
                     </div>
                 </div>
-                <LatestUpdates />
+                <div className="announcement-flex">
+                    <LatestUpdates />
+                </div>
             </div>
 
             <section className="gallery">

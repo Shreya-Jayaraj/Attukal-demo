@@ -3,10 +3,16 @@
     100% { transform: translateY(-100%); }
 }
 
+.announcements-parent{
+    width: 90%;
+    height: 100%; 
+    margin: 0 auto;
+}
+
 .announcements {
     max-width: 500px;
-    width:400px;
-    height: 300px;
+    width: 90%; 
+    height: 23rem ;
     margin: 0 auto; 
     padding-top: 0;
     padding: 0.5rem;
@@ -31,7 +37,7 @@
     animation:scroll-up 10s linear infinite;
     position: absolute;
     padding-top: 1rem;
-    width:96.5%;
+    margin-right: 0.4rem;
 }
 
 
@@ -92,4 +98,3 @@
         font-size: 0.9rem;
     }
 } 
-

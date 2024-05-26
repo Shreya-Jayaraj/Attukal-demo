@@ -32,16 +32,6 @@ const Navbar = () => {
                 <li>  
                     <NavLink to='/festivals'> Festivals</NavLink>   
                 </li>
-
-                {/* <li>
-                        <div className='menu' onClick={() =>{
-                        setToggleOpen(!toggleOpen)
-                    }}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </li>                 */}
             </ul>
         </nav>
      );

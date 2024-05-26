@@ -24,7 +24,7 @@ const Footer = () => {
           <span className='location-text'>
             <a href='https://www.google.com/travel/hotels/s/Ydae3qzn5NDjdvJm7'>
               P.B.No. 5805. Manacaud P.O., 
-            Thiruvananthapuram - 695 009,
+            <br/>Thiruvananthapuram - 695 009,
             <br/> Kerala, South India.</a>
           </span>
           </div>

@@ -13,8 +13,6 @@
     padding-bottom:12px;
 }
 
-
-
 .footer-links{
     display: flex;
     justify-content: space-around;
@@ -38,7 +36,7 @@
     width: 40px;
 }
 .location-text{
-    text-align: left;
+    text-align: justify;
     line-height: 0.5rem;
     font-size: 13px;;
 }
@@ -50,4 +48,11 @@
 .footer-below {
     padding-top: 15px;
     font-size: 0.9em;
+}
+
+@media screen and (max-width: 768px){
+    
+    .footer-links{
+        line-height:3px;     
+    }
 }
