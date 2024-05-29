@@ -1,4 +1,5 @@
 import 'react-router-dom';
+import { useEffect } from 'react';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import Upadevas from './Components/Upadevas';
@@ -11,8 +12,22 @@ import Vazhipad from './Components/Vazhipad';
 import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom'; 
 import OfficeBearers from './Components/OfficeBearers';
 import ScrollToTop from './Components/ScrollToTop';
+import music from '../src/assets/music.mp3';
+
 
 function App() {
+  
+  useEffect(() => {
+    const audio = new Audio(music);
+    audio.play().catch(error => {
+      console.error('Audio playback failed:', error);
+    });
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
   return (    
     <Router>
       <ScrollToTop />

@@ -61,25 +61,36 @@
   color: maroon;
   word-spacing: 6px;
 }
+.play-pause-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.play-pause-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.play-pause-btn:hover {
+  background-color: #0056b3;
+}
+
 
 .image {
   display: block;
   margin: 0 auto;
   max-width: 80%;
 }
-
-.gallery{
+.gallery-container{
   width:100%;
-  padding-bottom: 5rem; 
-  height:30rem;
-  margin-bottom:10rem;
-}
-
-.gallery h2{
-  font-size: 2rem;
-  color: maroon;
-  line-height:60px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -148,8 +159,8 @@
   }
 
   .gallery{
+    height:25rem;
     width:30rem;
-    margin-bottom: 0;
   }
 
   .amenities-gallery{
