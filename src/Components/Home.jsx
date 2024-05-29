@@ -112,9 +112,9 @@ const Home = () => {
                 </div>
             </div>
 
-            <section className="gallery">
+            <div className="gallery-container">
                 <Gallery  />
-            </section>
+            </div>
 
             <div className="history-card">
                     <div className="image-container">

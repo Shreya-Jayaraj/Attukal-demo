@@ -1,0 +1,54 @@
+.gallery{
+    width:100%; 
+    height:25rem;
+}
+  
+  .gallery h2{
+    font-size: 2rem;
+    color: maroon;
+    line-height:60px;
+    text-align: center;
+}
+
+.image-gallery-image{
+    width:100%
+}
+
+.image-gallery-image img{
+    max-height: 20rem;
+    max-width: 70%;
+    height:20rem;
+    width:30rem;
+    object-fit: cover;
+}
+
+@media (max-width: 961px) {
+    .gallery h2{
+      font-size: 1.5rem;
+    }
+
+    .image-gallery-image img{
+        height: 15rem;
+        object-fit: contain;
+    }
+  
+    .gallery{
+      width:100%;
+      height:20rem
+    }
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+
+  
+    .gallery{
+      width:100%
+    }
+  
+    .gallery h2{
+      font-size: 1.5rem;
+    }
+    
+  }
+  

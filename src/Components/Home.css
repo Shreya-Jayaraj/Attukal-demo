@@ -68,20 +68,12 @@
   max-width: 80%;
 }
 
-.gallery{
+.gallery-container{
   width:100%;
-  padding-bottom: 5rem; 
-  height:30rem;
-  margin-bottom:10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.gallery h2{
-  font-size: 2rem;
-  color: maroon;
-  line-height:60px;
-  text-align: center;
-}
-
 
 .amenities {
   animation: slideInFromLeft 1s ease-out forwards;
@@ -148,8 +140,8 @@
   }
 
   .gallery{
+    height:25rem;
     width:30rem;
-    margin-bottom: 0;
   }
 
   .amenities-gallery{
