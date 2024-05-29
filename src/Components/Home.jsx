@@ -1,7 +1,7 @@
 import devihome from "../assets/devihome.png";
 import Announcements from "./Announcements";
 import LatestUpdates from "./LatestUpdates";
-import { useState } from "react";
+import { useState } from "react";   
 import { useNavigate } from "react-router-dom";
 import './Vazhipad.css';
 import './Home.css';
@@ -103,8 +103,8 @@ const Home = () => {
                 <div className="image-flex">
                     <img className="image" src={devihome} alt="devi-image"></img>
                     <div className="slogam">
-                        <p>സർവമങ്ഗലമാങ്ഗല്യേ ശിവേ സർവാർത്തസാധികേ ।</p>
-                        <p>ശരണ്യേ ത്ര്യംബകേ ഗൗരി നാരായണി നമോയസ്തു തേ ॥</p>
+                        <p>സർവ്വമംഗള   മംഗല്യേ ശിവേ  സർവാർത്ഥ  സാധികേ।</p>
+                        <p>ശരണ്യേ ത്രയംബകേ ഗൗരി  നാരായണീ നമോസ്തുതേ॥</p>
                     </div>
                 </div>
                 <div className="announcement-flex">
@@ -113,7 +113,6 @@ const Home = () => {
             </div>
 
             <section className="gallery">
-                <h2>PHOTO GALLERY</h2>
                 <Gallery  />
             </section>
 

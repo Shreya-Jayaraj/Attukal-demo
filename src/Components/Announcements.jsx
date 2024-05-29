@@ -1,6 +1,6 @@
 import React from 'react'
 import './Scroll.css';
-import Records from '../records.json';
+import Records from '../announcements.json';
 
 const Announcements = () => {
   return (
