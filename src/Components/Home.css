@@ -38,7 +38,6 @@
   width:100%
 }
 
-
 .slogam{
   max-width: 100%;
   border-radius: 12px;
@@ -85,14 +84,15 @@
   background-color: maroon;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width:80%;
-  position:relative;
+  width:90%;
 }
 
 .amenities-gallery{
-  width:20rem;
-  height:20rem;
-  object-fit:cover;
+  width:40%;
+  height:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .amenities-text {
@@ -130,12 +130,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:23rem
+    width:100%
 
   }
 
   .amenities-text {
-    font-size: 0.9rem;
+    margin-top: 1rem;
     text-align: left;
   }
 
@@ -145,9 +145,9 @@
   }
 
   .amenities-gallery{
-    width:20rem;
     margin-bottom: 0;
-    height:20rem;
+    height:30%;
+    width:60%
   }
 }
 
@@ -176,13 +176,14 @@
   .gallery h2{
     font-size: 1.5rem;
   }
-
-  .amenities {
-    margin: 1rem;
+  .amenities-text {
+    font-size: 0.9rem;
   }
 
-  .amenities-text {
-    font-size: 0.8rem;
+  .amenities-gallery{
+    margin-bottom: 0;
+    height:30%;
+    width: 90%
   }
   
 }

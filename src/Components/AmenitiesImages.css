@@ -1,0 +1,41 @@
+.amenities-gallery-child{
+    width:100%; 
+    height:25rem;
+}
+  
+.amenities-gallery-image{
+    width:100%
+}
+
+.amenities-gallery-image img{
+    height:25rem;
+    width:100%;
+    object-fit: cover;
+}
+
+@media (max-width: 961px) {
+
+    .amenities-gallery-child{
+        height:20rem;
+        width:20rem;
+      }
+
+    .amenities-gallery-image img{
+        height:20rem;
+        object-fit: cover;
+    }
+  
+    
+  }
+  
+  @media screen and (max-width: 600px) {
+    .amenities-gallery-child{
+        height: 20rem;
+        width:20rem;
+      }
+
+    .amenities-gallery-image img{
+        height:20rem;
+        object-fit: cover;
+    }
+  }
