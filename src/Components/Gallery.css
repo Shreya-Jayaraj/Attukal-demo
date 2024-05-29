@@ -1,6 +1,6 @@
 .gallery{
     width:100%; 
-    height:25rem;
+    height:30rem;
 }
   
   .gallery h2{
@@ -15,9 +15,9 @@
 }
 
 .image-gallery-image img{
-    max-height: 20rem;
+    max-height: 3   0rem;
     max-width: 70%;
-    height:20rem;
+    height:25rem;
     width:30rem;
     object-fit: cover;
 }
@@ -34,14 +34,12 @@
   
     .gallery{
       width:100%;
-      height:20rem
+      height:100%
     }
   }
   
   
   @media screen and (max-width: 600px) {
-
-  
     .gallery{
       width:100%
     }
