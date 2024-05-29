@@ -1,7 +1,7 @@
 import devihome from "../assets/devihome.png";
 import Announcements from "./Announcements";
 import LatestUpdates from "./LatestUpdates";
-import { useState ,useEffect} from "react";   
+import { useState ,useEffect , useRef } from "react";   
 import { useNavigate } from "react-router-dom";
 import './Vazhipad.css';
 import './Home.css';
@@ -108,7 +108,110 @@ const Home = () => {
             audio.currentTime = 0;
         };
     }, []);
+
+    const historyRef = useRef(null);
+    useEffect(() => {
+        const observer1 = new IntersectionObserver((entries1) => {
+            entries1.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-history");
+                    // Disconnect the observer to improve performance
+                    observer1.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (historyRef.current) {
+            observer1.observe(historyRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (historyRef.current) {
+                observer1.unobserve(historyRef.current);
+            }
+        };
+    }, []);
+
+    const vazhipadRef = useRef(null);
+    useEffect(() => {
+        const observer2 = new IntersectionObserver((entries2) => {
+            entries2.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-vazhipad");
+                    // Disconnect the observer to improve performance
+                    observer2.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (vazhipadRef.current) {
+            observer2.observe(vazhipadRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (vazhipadRef.current) {
+                observer2.unobserve(vazhipadRef.current);
+            }
+        };
+    }, []);
+
+    const officeRef = useRef(null);
+
+    // Intersection Observer
+    useEffect(() => {
+        const observer4 = new IntersectionObserver((entries4) => {
+            entries4.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-office-bearers");
+                    // Disconnect the observer to improve performance
+                    observer4.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (officeRef.current) {
+            observer4.observe(officeRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (officeRef.current) {
+                observer4.unobserve(officeRef.current);
+            }
+        };
+    }, []);
         
+    const amenitiesRef = useRef(null);
+
+    // Intersection Observer
+    useEffect(() => {
+        const observer3 = new IntersectionObserver((entries3) => {
+            entries3.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-amenities");
+                    // Disconnect the observer to improve performance
+                    observer3.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (amenitiesRef.current) {
+            observer3.observe(amenitiesRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (amenitiesRef.current) {
+                observer3.unobserve(amenitiesRef.current);
+            }
+        };
+    }, []);
 
     return (
         <div className='home'>
@@ -134,7 +237,7 @@ const Home = () => {
                 <Gallery  />
             </div>
 
-            <div className="history-card">
+            <div ref={historyRef} className="history-card">
                     <div className="image-container">
                         <img src={devi2} alt='Devi' />
                     </div>
@@ -156,7 +259,7 @@ const Home = () => {
 
 
                 <div>
-            <div className="vazhipad-container">
+            <div ref={vazhipadRef} className="vazhipad-container">
                 <section>
                     <div className="container">
                         <h2>Vazhipadukal</h2>
@@ -191,7 +294,7 @@ const Home = () => {
             </div>
 
 
-            <div className="office-bearers-container">
+            <div ref={officeRef} className="office-bearers-container">
                 <h2>Office Bearers</h2>
                 <div className="office-bearers-cards">
                     {officeBearers.map((bearer, i) => (
@@ -212,7 +315,7 @@ const Home = () => {
 
 
 
-            <div className="amenities">
+            <div ref={amenitiesRef} className="amenities">
                 <div className="amenities-gallery">
                     <AmenitiesImages />
                 </div>

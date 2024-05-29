@@ -60,25 +60,6 @@
   color: maroon;
   word-spacing: 6px;
 }
-.play-pause-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.play-pause-btn {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.play-pause-btn:hover {
-  background-color: #0056b3;
-}
-
 
 .image {
   display: block;
@@ -93,7 +74,7 @@
 }
 
 .amenities {
-  animation: slideInFromLeft 1s ease-out forwards;
+  /* Remove the animation property here */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -104,6 +85,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width:90%;
 }
+
+/* Add animation properties to the .animate-amenities class */
+.animate-amenities {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
 
 .amenities-gallery{
   width:40%;
