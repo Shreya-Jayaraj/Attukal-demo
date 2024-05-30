@@ -66,7 +66,6 @@
   margin: 0 auto;
   max-width: 80%;
 }
-
 .gallery-container{
   width:100%;
   display: flex;
@@ -75,7 +74,7 @@
 }
 
 .amenities {
-  animation: slideInFromLeft 1s ease-out forwards;
+  /* Remove the animation property here */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -86,6 +85,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width:90%;
 }
+
+/* Add animation properties to the .animate-amenities class */
+.animate-amenities {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
 
 .amenities-gallery{
   width:30%;

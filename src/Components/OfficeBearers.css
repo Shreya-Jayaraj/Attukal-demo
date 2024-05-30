@@ -1,7 +1,21 @@
 
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
 .office-bearers-container {
     padding: 50px;
 }
+.animate-office-bearers {
+    animation: slideInFromRight 1s ease-out forwards;
+  }
 .office-bearers-container h2{
     color:maroon;
     text-align: center;
@@ -20,7 +34,7 @@
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 170px;
+    width: 160px;
     padding: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -93,4 +107,17 @@
     height: auto;
     border-radius: 50%;
     margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .office-bearer-card {
+        width: calc(50% - 20px); /* Display 2 cards in a row */
+    }
+}
+
+/* Adjust card width for even smaller screens */
+@media (max-width: 480px) {
+    .office-bearer-card {
+        width: calc(100% - 20px); /* Display 1 card in a row */
+    }
 }

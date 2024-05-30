@@ -1,7 +1,7 @@
 import devihome from "../assets/devihome.png";
 import Announcements from "./Announcements";
 import LatestUpdates from "./LatestUpdates";
-import { useState } from "react";   
+import { useState ,useEffect , useRef } from "react";   
 import { useNavigate } from "react-router-dom";
 import './Vazhipad.css';
 import './Home.css';
@@ -21,6 +21,7 @@ import PKkrishnannair from '../assets/PKkrishnannair.png';
 import Saratkumar from '../assets/Saratkumar.png';
 import ASanumodh from '../assets/ASanumodh.png';
 import Geethakumari from '../assets/Geethakumari.png';
+import music from '../assets/music.mp3';
 
 const Home = () => {
 
@@ -28,27 +29,29 @@ const Home = () => {
     const [cards] = useState([
         {
             title: 'Udayasthamana Pooja',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+            text: 'This pooja is performed for attaining all prosperity.'
         },
         {
-            title: 'Ardha Dina Pooja',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+            title: 'Aayur Sooktham Archana',
+            text: 'This pooja is performed for the long life'
+            
         },
         {
             title: 'Bhagavathi Seva',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+            text: 'This pooja is performed for prosperity'
         },
         {
             title: 'Chuttuvilakku',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+            text: 'This pooja is performed for redemption of sin, peace of mind'
+            
         },
         {
             title: 'Kamba Vilakku',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+            text: 'This pooja is performed for attaining what is desired'
         },
         {
-            title: 'Leksharchana   (including flowers)',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+            title: 'Ayilya Pooja',
+            text: ' This pooja is performed for propitiating the serpents, alleviating skin ailments'
         },
 
     ]);
@@ -64,6 +67,7 @@ const Home = () => {
 
     const [showModal, setShowModal ] = useState(false);
     const [modalContent, setModalContent ] = useState(null);
+    
 
     const navigate=useNavigate();
     const handleLearnMoreClick=()=>  {
@@ -97,6 +101,121 @@ const Home = () => {
         navigate("/amenities");
     }
 
+    useEffect(() => {
+        const audio = new Audio(music);
+        audio.play().catch(error => {
+            console.error('Audio playback failed:', error);
+        });
+
+        return () => {
+            audio.pause();
+            audio.currentTime = 0;
+        };
+    }, []);
+
+    const historyRef = useRef(null);
+    useEffect(() => {
+        const observer1 = new IntersectionObserver((entries1) => {
+            entries1.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-history");
+                    // Disconnect the observer to improve performance
+                    observer1.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (historyRef.current) {
+            observer1.observe(historyRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (historyRef.current) {
+                observer1.unobserve(historyRef.current);
+            }
+        };
+    }, []);
+
+    const vazhipadRef = useRef(null);
+    useEffect(() => {
+        const observer2 = new IntersectionObserver((entries2) => {
+            entries2.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-vazhipad");
+                    // Disconnect the observer to improve performance
+                    observer2.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (vazhipadRef.current) {
+            observer2.observe(vazhipadRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (vazhipadRef.current) {
+                observer2.unobserve(vazhipadRef.current);
+            }
+        };
+    }, []);
+
+    const officeRef = useRef(null);
+
+    // Intersection Observer
+    useEffect(() => {
+        const observer4 = new IntersectionObserver((entries4) => {
+            entries4.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-office-bearers");
+                    // Disconnect the observer to improve performance
+                    observer4.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (officeRef.current) {
+            observer4.observe(officeRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (officeRef.current) {
+                observer4.unobserve(officeRef.current);
+            }
+        };
+    }, []);
+        
+    const amenitiesRef = useRef(null);
+
+    // Intersection Observer
+    useEffect(() => {
+        const observer3 = new IntersectionObserver((entries3) => {
+            entries3.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-amenities");
+                    // Disconnect the observer to improve performance
+                    observer3.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (amenitiesRef.current) {
+            observer3.observe(amenitiesRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (amenitiesRef.current) {
+                observer3.unobserve(amenitiesRef.current);
+            }
+        };
+    }, []);
 
     return (
         <div className='home'>
@@ -109,7 +228,9 @@ const Home = () => {
                     <div className="slogam">
                         <p>സർവ്വമംഗള   മംഗല്യേ ശിവേ  സർവാർത്ഥ  സാധികേ।</p>
                         <p>ശരണ്യേ ത്രയംബകേ ഗൗരി  നാരായണീ നമോസ്തുതേ॥</p>
+                        
                     </div>
+                    
                 </div>
                 <div className="announcement-flex">
                     <LatestUpdates />
@@ -148,7 +269,7 @@ const Home = () => {
 
 
                 <div>
-            <div className="vazhipad-container">
+            <div ref={vazhipadRef} className="vazhipad-container">
                 <section>
                     <div className="container">
                         <h2>Vazhipadukal</h2>
@@ -183,7 +304,7 @@ const Home = () => {
             </div>
 
 
-            <div className="office-bearers-container">
+            <div ref={officeRef} className="office-bearers-container">
                 <h2>Office Bearers</h2>
                 <div className="office-bearers-cards">
                     {officeBearers.map((bearer, i) => (
@@ -204,7 +325,7 @@ const Home = () => {
 
 
 
-            <div className="amenities">
+            <div ref={amenitiesRef} className="amenities">
                 <div className="amenities-gallery">
                     <AmenitiesImages />
                 </div>
@@ -233,6 +354,7 @@ const Home = () => {
 
 
             </div>
+            
         </div>
     );
 }
