@@ -221,25 +221,25 @@ const Home = () => {
 
     // Intersection Observer
     useEffect(() => {
-        const observer5 = new IntersectionObserver((entries5) => {
+        const observer = new IntersectionObserver((entries5) => {
             entries5.forEach(entry => {
                 if (entry.isIntersecting) {
                     // When the .amenities section comes into view, add the .animate-amenities class
                     entry.target.classList.add("animate-awards");
                     // Disconnect the observer to improve performance
-                    observer5.disconnect();
+                    observer.disconnect();
                 }
             });
         }, { threshold: 0.5 });
 
         if (awardsRef.current) {
-            observer5.observe(awardsRef.current);
+            observer.observe(awardsRef.current);
         }
 
         // Clean up
         return () => {
             if (awardsRef.current) {
-                observer5.unobserve(awardsRef.current);
+                observer.unobserve(awardsRef.current);
             }
         };
     }, []);
