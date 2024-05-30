@@ -247,7 +247,7 @@ const Home = () => {
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div className="history-card">
+            <div ref={historyRef} className="history-card">
                     <div className="image-container">
                         <img src={devi2} alt='Devi' />
                     </div>

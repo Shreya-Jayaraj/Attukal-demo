@@ -41,9 +41,11 @@
     height: auto;
     width:100%
 }
+
 .animate-history {
     animation: slideInFromRight 1s ease-out forwards;
   }
+  
 .history-card:hover{
     border-color: rgb(255, 254, 254);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
