@@ -16,7 +16,7 @@ const OfficeBearers = () => {
         { name: 'Smt V Sobha', position: 'President', image: Vsobha  },
         { name: 'Sri P.K. Krishnan Nair', position: 'Vice President', image: PKkrishnannair  },
         { name: 'Sri Sarat Kumar', position: 'Secretary', image: Saratkumar  },
-        { name: 'Sri A.S. Anumodh', position: 'Join Secretary', image: ASanumodh  },
+        { name: 'Sri A.S. Anumodh', position: 'Joint Secretary', image: ASanumodh  },
         { name: 'Smt Geetha Kumari.A', position: 'Treasurer', image: Geethakumari  },
         
     ]);
