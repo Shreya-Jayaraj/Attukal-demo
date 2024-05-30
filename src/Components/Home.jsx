@@ -343,7 +343,7 @@ const Home = () => {
                 </video>
             </div>
 
-            <div ref={historyRef} className="history-card">
+            <div ref={historyRef} className="history-card hidden">
                     <div className="image-container">
                         <img src={devi2} alt='Devi' />
                     </div>
@@ -365,7 +365,7 @@ const Home = () => {
 
 
                 <div>
-            <div ref={vazhipadRef} className="vazhipad-container">
+            <div ref={vazhipadRef} className="vazhipad-container hidden">
                 <section>
                     <div className="container">
                         <h2>Vazhipadukal</h2>
@@ -400,7 +400,7 @@ const Home = () => {
             </div>
 
 
-            <div ref={officeRef} className="office-bearers-container">
+            <div ref={officeRef} className="office-bearers-container hidden">
                 <h2>Office Bearers</h2>
                 <div className="office-bearers-cards">
                     {officeBearers.map((bearer, i) => (
@@ -421,7 +421,7 @@ const Home = () => {
 
 
 
-            <div ref={amenitiesRef} className="amenities">
+            <div ref={amenitiesRef} className="amenities hidden">
                 <div className="amenities-gallery">
                     <AmenitiesImages />
                 </div>
@@ -436,7 +436,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div ref={awardsRef} className="awards">
+            <div ref={awardsRef} className="awards hidden">
                 <div className="award-image">
                     <img  src={guiness} alt="guiness-image"></img>
                 </div>
