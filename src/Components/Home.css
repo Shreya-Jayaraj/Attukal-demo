@@ -117,6 +117,10 @@
   border-radius: 8px;
 }
 
+.hidden{
+  opacity: 0;
+}
+
 
 .amenities {
   display: flex;
