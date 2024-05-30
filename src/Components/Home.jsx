@@ -114,7 +114,7 @@ const Home = () => {
     }, []);
 
     const cardsRef = useRef([]);
-const historyRef = useRef(null);
+    const historyRef = useRef(null);
     useEffect(() => {
         const observerOptions = {
             threshold: 0.1,
