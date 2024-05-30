@@ -82,6 +82,23 @@
   justify-content: center;
 }
 
+.attukal-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.attukal-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
 .amenities {
   display: flex;
   flex-direction: row;
@@ -198,6 +215,10 @@
   .gallery{
     height:25rem;
     width:30rem;
+  }
+
+  .attukal-video {
+    padding: 1rem 0.5rem;
   }
 
   .amenities-gallery{

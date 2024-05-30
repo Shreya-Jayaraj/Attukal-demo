@@ -3,17 +3,19 @@ import './Footer.css';
 import call22 from "../assets/call22.png";
 import mail22 from "../assets/mail22.png";
 import location from "../assets/location.png";
+import devihome from '../assets/devihome.png'
 
 const Footer = () => {
   return (
     <div className='footer'>
       <div className='footer-section-padding'>
         <h3 className="footer-heading">Attukal Bhagavathy Temple Trust</h3>
-        
+        <img className="footer-image" src={devihome}></img>
         <div className="footer-links">
           <div className='footer-link'>
             <img className = "call-image" src={call22}></img>
-            +91-471- 2463130 (Off) 2456456 (Temple)
+            <span className='call-text'>+91-471- 2463130(Off) 2456456(Temple)
+            </span>
           </div>
           <div className='footer-link'>
             <img className = "mail-image" src={mail22}></img>

@@ -13,19 +13,30 @@
     padding-bottom:12px;
 }
 
+.footer-image{
+    width:10rem;
+}
+
 .footer-links{
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap:10rem;
+    margin-right: 4rem;
 }
 
 .footer-link{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .call-image{
     width: 25px;
+}
+
+.call-text{
+    line-height: 1rem;
+    font-size: 0.9rem;
 }
 
 .mail-image{
@@ -50,9 +61,12 @@
     font-size: 0.9em;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 961px){
     
     .footer-links{
-        line-height:3px;     
+        flex-direction: column;
+        line-height:3px;  
+        gap:0px;   
+        margin-right: 0px;
     }
 }

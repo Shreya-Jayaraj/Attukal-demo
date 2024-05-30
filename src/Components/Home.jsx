@@ -60,7 +60,7 @@ const Home = () => {
         { name: 'Smt V Sobha', position: 'President', image: Vsobha  },
         { name: 'Sri P.K. Krishnan Nair', position: 'Vice President', image: PKkrishnannair  },
         { name: 'Sri Sarat Kumar', position: 'Secretary', image: Saratkumar  },
-        { name: 'Sri A.S. Anumodh', position: 'Join Secretary', image: ASanumodh  },
+        { name: 'Sri A.S. Anumodh', position: 'Joint Secretary', image: ASanumodh  },
         { name: 'Smt Geetha Kumari.A', position: 'Treasurer', image: Geethakumari  },
         
     ]);
@@ -269,11 +269,12 @@ const Home = () => {
             </div>
 
             <div className='attukal-video'>
-                <video controls width="600">
+                <video controls>
                     <source src={attukalvideo} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
+
             <div ref={historyRef} className="history-card">
                     <div className="image-container">
                         <img src={devi2} alt='Devi' />
