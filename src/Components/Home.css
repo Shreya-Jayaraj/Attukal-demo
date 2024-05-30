@@ -16,7 +16,16 @@
     opacity: 1;
   }
 }
-
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .first-line{
   width: 100%;
   display: flex;
@@ -121,8 +130,13 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
+  box-sizing:border-box;
+  border: 20px solid maroon
+  
 }
-
+.animate-awards{
+  animation: slideInFromRight 1s ease-out forwards;
+}
 .award-image {
   width: 30%;
   display: flex;
@@ -144,7 +158,9 @@
   line-height: 1.5;
   text-align: justify;
 }
-
+.awards h4{
+  font-size: 1.5rem
+}
 
 @media (max-width: 961px) {
   .first-line{

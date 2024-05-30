@@ -115,50 +115,50 @@ const Home = () => {
 
     const historyRef = useRef(null);
     useEffect(() => {
-        const observer1 = new IntersectionObserver((entries1) => {
+        const observer = new IntersectionObserver((entries1) => {
             entries1.forEach(entry => {
                 if (entry.isIntersecting) {
                     // When the .amenities section comes into view, add the .animate-amenities class
                     entry.target.classList.add("animate-history");
                     // Disconnect the observer to improve performance
-                    observer1.disconnect();
+                    observer.disconnect();
                 }
             });
         }, { threshold: 0.5 });
 
         if (historyRef.current) {
-            observer1.observe(historyRef.current);
+            observer.observe(historyRef.current);
         }
 
         // Clean up
         return () => {
             if (historyRef.current) {
-                observer1.unobserve(historyRef.current);
+                observer.unobserve(historyRef.current);
             }
         };
     }, []);
 
     const vazhipadRef = useRef(null);
     useEffect(() => {
-        const observer2 = new IntersectionObserver((entries2) => {
+        const observer = new IntersectionObserver((entries2) => {
             entries2.forEach(entry => {
                 if (entry.isIntersecting) {
                     // When the .amenities section comes into view, add the .animate-amenities class
                     entry.target.classList.add("animate-vazhipad");
                     // Disconnect the observer to improve performance
-                    observer2.disconnect();
+                    observer.disconnect();
                 }
             });
         }, { threshold: 0.5 });
 
         if (vazhipadRef.current) {
-            observer2.observe(vazhipadRef.current);
+            observer.observe(vazhipadRef.current);
         }
 
         // Clean up
         return () => {
             if (vazhipadRef.current) {
-                observer2.unobserve(vazhipadRef.current);
+                observer.unobserve(vazhipadRef.current);
             }
         };
     }, []);
@@ -167,25 +167,25 @@ const Home = () => {
 
     // Intersection Observer
     useEffect(() => {
-        const observer4 = new IntersectionObserver((entries4) => {
+        const observer = new IntersectionObserver((entries4) => {
             entries4.forEach(entry => {
                 if (entry.isIntersecting) {
                     // When the .amenities section comes into view, add the .animate-amenities class
                     entry.target.classList.add("animate-office-bearers");
                     // Disconnect the observer to improve performance
-                    observer4.disconnect();
+                    observer.disconnect();
                 }
             });
         }, { threshold: 0.5 });
 
         if (officeRef.current) {
-            observer4.observe(officeRef.current);
+            observer.observe(officeRef.current);
         }
 
         // Clean up
         return () => {
             if (officeRef.current) {
-                observer4.unobserve(officeRef.current);
+                observer.unobserve(officeRef.current);
             }
         };
     }, []);
@@ -194,25 +194,52 @@ const Home = () => {
 
     // Intersection Observer
     useEffect(() => {
-        const observer3 = new IntersectionObserver((entries3) => {
+        const observer = new IntersectionObserver((entries3) => {
             entries3.forEach(entry => {
                 if (entry.isIntersecting) {
                     // When the .amenities section comes into view, add the .animate-amenities class
                     entry.target.classList.add("animate-amenities");
                     // Disconnect the observer to improve performance
-                    observer3.disconnect();
+                    observer.disconnect();
                 }
             });
         }, { threshold: 0.5 });
 
         if (amenitiesRef.current) {
-            observer3.observe(amenitiesRef.current);
+            observer.observe(amenitiesRef.current);
         }
 
         // Clean up
         return () => {
             if (amenitiesRef.current) {
-                observer3.unobserve(amenitiesRef.current);
+                observer.unobserve(amenitiesRef.current);
+            }
+        };
+    }, []);
+
+    const awardsRef = useRef(null);
+
+    // Intersection Observer
+    useEffect(() => {
+        const observer5 = new IntersectionObserver((entries5) => {
+            entries5.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-awards");
+                    // Disconnect the observer to improve performance
+                    observer5.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (awardsRef.current) {
+            observer5.observe(awardsRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (awardsRef.current) {
+                observer5.unobserve(awardsRef.current);
             }
         };
     }, []);
@@ -340,7 +367,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="awards">
+            <div ref={awardsRef} className="awards">
                 <div className="award-image">
                     <img  src={guiness} alt="guiness-image"></img>
                 </div>
