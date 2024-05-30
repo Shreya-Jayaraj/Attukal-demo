@@ -217,6 +217,33 @@ const Home = () => {
         };
     }, []);
 
+    const awardsRef = useRef(null);
+
+    // Intersection Observer
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries5) => {
+            entries5.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the .amenities section comes into view, add the .animate-amenities class
+                    entry.target.classList.add("animate-awards");
+                    // Disconnect the observer to improve performance
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (awardsRef.current) {
+            observer.observe(awardsRef.current);
+        }
+
+        // Clean up
+        return () => {
+            if (awardsRef.current) {
+                observer.unobserve(awardsRef.current);
+            }
+        };
+    }, []);
+
     return (
         <div className='home'>
             <div className='first-line'>
@@ -341,7 +368,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="awards">
+            <div ref={awardsRef} className="awards">
                 <div className="award-image">
                     <img  src={guiness} alt="guiness-image"></img>
                 </div>

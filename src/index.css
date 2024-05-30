@@ -36,7 +36,7 @@ html, body {
 
 .content{
   flex: 1;
-  padding-bottom: 20px;
+  padding: 40px;
 }
 
 a{
