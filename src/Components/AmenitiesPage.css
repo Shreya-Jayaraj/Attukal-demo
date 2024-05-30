@@ -1,0 +1,34 @@
+.amenities-container {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .amenities-container h1{
+    color: maroon;
+    font-size: 100%;
+  }
+  
+  .image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px; 
+  }
+  
+  .image-item {
+    flex: 1 0 21%; 
+    max-width: 200px; 
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  

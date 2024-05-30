@@ -11,6 +11,8 @@ import './History.css'
 import Modal from './Modal';
 import AmenitiesImages from './AmenitiesImages';
 import './OfficeBearers.css';
+import attukalvideo from '../assets/attukalvideo.mp4';
+import guiness from '../assets/guinness.png'
 
 
 import SVenugopal from '../assets/SVenugopal.png';
@@ -87,10 +89,12 @@ const Home = () => {
         navigate("/origin&history");
     }
 
-
-
     const handleOfficeBearersClick = () => {
         navigate("/office-bearers");
+    }
+
+    const handleAmenitiesClick = () => {
+        navigate("/amenities");
     }
 
 
@@ -116,6 +120,12 @@ const Home = () => {
                 <Gallery  />
             </div>
 
+            <div className='attukal-video'>
+                <video controls width="600">
+                    <source src={attukalvideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div className="history-card">
                     <div className="image-container">
                         <img src={devi2} alt='Devi' />
@@ -200,11 +210,28 @@ const Home = () => {
                 </div>
                 <div className='amenities-text'>   
                     <h4>AMENITIES</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Quam sequi enim magni, ad nihil autem deserunt voluptas? Corrupti beatae, 
-                    illum consequuntur impedit ab aliquid reprehenderit veniam minus omnis unde perspiciatis.
+                    <p>Attukal Temple offers a variety of facilities for devotees, including Nadapandal for shelter and events, Visrama Sanketham for rest and meals, and various dormitory and room options. The temple also features three auditoriums for events, a hospital building leased for medical services, and tourist bus services for pilgrim tourism. Additional amenities include online booking for services and divine gold lockets available for purchase.
+                    </p>
+                    <div className='btn'>
+                            <button onClick={handleAmenitiesClick}>
+                                <a>Read More</a>
+                            </button>
+                    </div>
+                </div>
+            </div>
+            <div className="awards">
+                <div className="award-image">
+                    <img  src={guiness} alt="guiness-image"></img>
+                </div>
+                <div className='awards-content'>
+                    <h4>GUINNESS BOOK OF WORLD RECORDS</h4>
+                    <p>
+                        The Pongala festival of the Temple is the largest women gathering festival in the world. This entered in the Guinness Book of World Records in 1997 and 2009 for participating 15 lakhs and 25 lakhs respectively.
                     </p>
                 </div>
+
+
+
             </div>
         </div>
     );

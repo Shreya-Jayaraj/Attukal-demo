@@ -10,7 +10,9 @@ import ImageGallery from './Components/Gallery';
 import Vazhipad from './Components/Vazhipad';
 import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom'; 
 import OfficeBearers from './Components/OfficeBearers';
+import AmenitiesPage from './Components/AmenitiesPage';
 import ScrollToTop from './Components/ScrollToTop';
+
 
 function App() {
   return (    
@@ -28,6 +30,7 @@ function App() {
             <Route path='/learn-more' element = {<Vazhipad/>}/>
             <Route path='/image-gallery' element = {<ImageGallery/>}/>
             <Route path='/office-bearers' element = {<OfficeBearers/>}/>
+            <Route path='/amenities' element = {<AmenitiesPage/>}/>
             
           </Routes>
         </div>

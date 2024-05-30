@@ -6,7 +6,6 @@ import home from '../assets/home.png';
 const Navbar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false)
-    const [toggleOpen, setToggleOpen] = useState(false)
     return ( 
         <nav>
             <div className='left-section'>
@@ -30,7 +29,7 @@ const Navbar = () => {
                     <NavLink to='/office-bearers'> Office Bearers</NavLink>  
                 </li>
                 <li>  
-                    <NavLink to='/activities'> Activities</NavLink>   
+                    <NavLink to='/amenities'> Amenities</NavLink>   
                 </li>
                 <li>  
                     <NavLink to='/festivals'> Festivals</NavLink>   

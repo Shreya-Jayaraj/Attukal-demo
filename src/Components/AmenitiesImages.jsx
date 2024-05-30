@@ -1,21 +1,49 @@
 import ImageGallery from "react-image-gallery";
 import 'react-image-gallery/styles/css/image-gallery.css';
-import attukalbus from "../assets/attukalbus.jpg";
-import  attukaltemple from "../assets/attukaltemple.jpg";
-import prathishtaImage from "../assets/prathishta.jpg";
 import './AmenitiesImages.css'
+
+import attukalbus from "../assets/amenities/attukalbus.jpg";
+import ambaaudi from "../assets/amenities/ambaaudi.jpg";
+import cashcounter from "../assets/amenities/cashcounter.jpg";
+import deviaudi from "../assets/amenities/deviaudi.jpg";
+import hospital from "../assets/amenities/hospital.jpg";
+import karthikaaudi from "../assets/amenities/karthikaaudi.jpg";
+import nadapandal from "../assets/amenities/nadapandal.jpg";
+import parkingarea from "../assets/amenities/parkingarea.jpg";
+import thaliket from "../assets/amenities/thaliket.jpg";
+import visrama from "../assets/amenities/visrama.jpg";
+
 
 
 const images = [
+  {
+    original: nadapandal,
+  },  
+  {
+    original: visrama,
+  },
+  {
+    original: ambaaudi,
+  },
+  {
+    original: karthikaaudi,
+  },
+  {
+    original: deviaudi,
+  },  
+  {
+    original: hospital,
+    
+  },
   {
     original: attukalbus,
     
   },
   {
-    original: attukaltemple,
+    original: parkingarea,
   },
   {
-    original: prathishtaImage,
+    original: cashcounter,
   },  
 ];
 
