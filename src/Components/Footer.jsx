@@ -3,7 +3,10 @@ import './Footer.css';
 import call22 from "../assets/call22.png";
 import mail22 from "../assets/mail22.png";
 import location from "../assets/location.png";
-import devihome from '../assets/devihome.png'
+import devihome from '../assets/devihome.png';
+import facebook from '../assets/facebook.png';
+import youtube from '../assets/youtube.png';
+import instagram from '../assets/instagram.png';
 
 const Footer = () => {
   return (
@@ -11,9 +14,20 @@ const Footer = () => {
       <div className='footer-section-padding'>
         <h3 className="footer-heading">Attukal Bhagavathy Temple Trust</h3>
         <img className="footer-image" src={devihome}></img>
+        <div className='socials'>
+            <a href="#">
+              <img src={facebook}></img>
+            </a>
+            <a href="#">
+              <img src={youtube}></img>
+            </a>
+            <a href="#">
+              <img src={instagram}></img>
+            </a>
+          </div>
         <div className="footer-links">
           <div className='footer-link'>
-            <img className = "call-image" src={call22}></img>
+            <img className = "call-image" src={call22} ></img>
             <span className='call-text'>+91-471- 2463130(Off) 2456456(Temple)
             </span>
           </div>

@@ -418,9 +418,6 @@ const Home = () => {
                 </div>
             </div>
 
-
-
-
             <div ref={amenitiesRef} className="amenities hidden">
                 <div className="amenities-gallery">
                     <AmenitiesImages />
@@ -446,9 +443,6 @@ const Home = () => {
                         The Pongala festival of the Temple is the largest women gathering festival in the world. This entered in the Guinness Book of World Records in 1997 and 2009 for participating 15 lakhs and 25 lakhs respectively.
                     </p>
                 </div>
-
-
-
             </div>
             
         </div>
