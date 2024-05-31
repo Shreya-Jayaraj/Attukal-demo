@@ -29,29 +29,29 @@ const Home = () => {
     const [cards] = useState([
         {
             title: 'Udayasthamana Pooja',
-            text: 'This pooja is performed for attaining all prosperity.'
+            text: 'This pooja is performed for attaining all prosperity. More Info about the vazhipad will be put up here'
         },
         {
             title: 'Aayur Sooktham Archana',
-            text: 'This pooja is performed for the long life'
+            text: 'This pooja is performed for the long life. More Info about the vazhipad will be put up here'
             
         },
         {
             title: 'Bhagavathi Seva',
-            text: 'This pooja is performed for prosperity'
+            text: 'This pooja is performed for prosperity. More Info about the vazhipad will be put up here'
         },
         {
             title: 'Chuttuvilakku',
-            text: 'This pooja is performed for redemption of sin, peace of mind'
+            text: 'This pooja is performed for redemption of sin, peace of mind. More Info about the vazhipad will be put up here'
             
         },
         {
             title: 'Kamba Vilakku',
-            text: 'This pooja is performed for attaining what is desired'
+            text: 'This pooja is performed for attaining what is desired. More Info about the vazhipad will be put up here'
         },
         {
             title: 'Ayilya Pooja',
-            text: ' This pooja is performed for propitiating the serpents, alleviating skin ailments'
+            text: ' This pooja is performed for propitiating the serpents, alleviating skin ailments. More Info about the vazhipad will be put up here'
         },
 
     ]);
@@ -100,9 +100,24 @@ const Home = () => {
     const handleAmenitiesClick = () => {
         navigate("/amenities");
     }
+    const cardsRef = useRef([]);
 
     useEffect(() => {
         const audio = new Audio(music);
+        let playCount = 0;
+
+        const handleAudioEnd = () => {
+            playCount += 1;
+            if (playCount < 2) {
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+            } else {
+                audio.removeEventListener('ended', handleAudioEnd);
+            }
+        };
+
+        audio.addEventListener('ended', handleAudioEnd);
         audio.play().catch(error => {
             console.error('Audio playback failed:', error);
         });
@@ -110,15 +125,18 @@ const Home = () => {
         return () => {
             audio.pause();
             audio.currentTime = 0;
+            audio.removeEventListener('ended', handleAudioEnd);
         };
     }, []);
 
-    const cardsRef = useRef([]);
+
     const historyRef = useRef(null);
     useEffect(() => {
         const observerOptions = {
             threshold: 0.1,
         };
+
+        
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -126,9 +144,11 @@ const Home = () => {
                     entry.target.classList.add('animate-history');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
+                    
                 }
             });
         }, observerOptions);
+        
 
         if (historyRef.current) {
             observer.observe(historyRef.current);
@@ -141,6 +161,8 @@ const Home = () => {
             }
         });
 
+        
+
         return () => {
             if (historyRef.current) {
                 observer.unobserve(historyRef.current);
@@ -150,6 +172,7 @@ const Home = () => {
                     observer.unobserve(card);
                 }
             });
+            
         };
     }, []);
 
@@ -159,19 +182,25 @@ const Home = () => {
             threshold: 0.1,
         };
 
+        
+
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-vazhipad');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
+                    
                 }
             });
         }, observerOptions);
+        
 
         if (vazhipadRef.current) {
             observer.observe(vazhipadRef.current);
         }
+
+        
 
         cardsRef.current.forEach(card => {
             if (card) {
@@ -189,6 +218,7 @@ const Home = () => {
                     observer.unobserve(card);
                 }
             });
+            
         };
     }, []);
 
@@ -199,15 +229,18 @@ const Home = () => {
             threshold: 0.1,
         };
 
+        
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-office-bearers');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
+                    
                 }
             });
         }, observerOptions);
+        
 
         if (officeRef.current) {
             observer.observe(officeRef.current);
@@ -220,6 +253,8 @@ const Home = () => {
             }
         });
 
+        
+
         return () => {
             if (officeRef.current) {
                 observer.unobserve(officeRef.current);
@@ -229,6 +264,7 @@ const Home = () => {
                     observer.unobserve(card);
                 }
             });
+            
         };
     }, []);
         
@@ -312,6 +348,7 @@ const Home = () => {
         };
     }, []);
 
+    
     return (
         <div className='home'>
             <div className='first-line'>
@@ -450,6 +487,3 @@ const Home = () => {
 }
 
 export default Home;
-
-
-
