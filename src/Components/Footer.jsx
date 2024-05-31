@@ -16,13 +16,13 @@ const Footer = () => {
         <img className="footer-image" src={devihome}></img>
         <div className='socials'>
             <a href="https://www.facebook.com/attukal.temple/">
-              <img src={facebook}></img>
+              <img src={facebook} alt='facebook'></img>
             </a>
             <a href="https://www.youtube.com/@attukal_temple">
-              <img src={youtube}></img>
+              <img src={youtube} alt='youtube'></img>
             </a>
-            <a href="#">
-              <img src={instagram}></img>
+            <a href="https://www.instagram.com/attukal_temple_offical?igsh=MXVzZWEyZHU5eHV4ag==">
+              <img src={instagram} alt='instagram'></img>
             </a>
           </div>
         <div className="footer-links">

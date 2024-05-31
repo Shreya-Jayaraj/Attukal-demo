@@ -11,7 +11,7 @@ import './History.css'
 import Modal from './Modal';
 import AmenitiesImages from './AmenitiesImages';
 import './OfficeBearers.css';
-import attukalvideo from '../assets/attukalvideo.mp4';
+import attukalvideo2 from '../assets/attukalvideo2.mp4';
 import guiness from '../assets/guinness.png'
 
 
@@ -375,7 +375,7 @@ const Home = () => {
 
             <div className='attukal-video'>
                 <video controls>
-                    <source src={attukalvideo} type="video/mp4" />
+                    <source src={attukalvideo2} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
