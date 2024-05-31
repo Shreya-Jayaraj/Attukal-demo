@@ -136,11 +136,7 @@ const Home = () => {
             threshold: 0.1,
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-        const observerOptions = {
-            threshold: 0.1,
-        };
+        
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -148,13 +144,11 @@ const Home = () => {
                     entry.target.classList.add('animate-history');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
-                    entry.target.classList.add('animate-history');
-                    entry.target.classList.remove('hidden');
-                    observer.unobserve(entry.target);
+                    
                 }
             });
         }, observerOptions);
-        }, observerOptions);
+        
 
         if (historyRef.current) {
             observer.observe(historyRef.current);
@@ -167,12 +161,7 @@ const Home = () => {
             }
         });
 
-        cardsRef.current.forEach(card => {
-            if (card) {
-                card.classList.add('hidden');
-                observer.observe(card);
-            }
-        });
+        
 
         return () => {
             if (historyRef.current) {
@@ -183,11 +172,7 @@ const Home = () => {
                     observer.unobserve(card);
                 }
             });
-            cardsRef.current.forEach(card => {
-                if (card) {
-                    observer.unobserve(card);
-                }
-            });
+            
         };
     }, []);
 
@@ -197,11 +182,7 @@ const Home = () => {
             threshold: 0.1,
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-        const observerOptions = {
-            threshold: 0.1,
-        };
+        
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -209,24 +190,17 @@ const Home = () => {
                     entry.target.classList.add('animate-vazhipad');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
-                    entry.target.classList.add('animate-vazhipad');
-                    entry.target.classList.remove('hidden');
-                    observer.unobserve(entry.target);
+                    
                 }
             });
         }, observerOptions);
-        }, observerOptions);
+        
 
         if (vazhipadRef.current) {
             observer.observe(vazhipadRef.current);
         }
 
-        cardsRef.current.forEach(card => {
-            if (card) {
-                card.classList.add('hidden');
-                observer.observe(card);
-            }
-        });
+        
 
         cardsRef.current.forEach(card => {
             if (card) {
@@ -244,11 +218,7 @@ const Home = () => {
                     observer.unobserve(card);
                 }
             });
-            cardsRef.current.forEach(card => {
-                if (card) {
-                    observer.unobserve(card);
-                }
-            });
+            
         };
     }, []);
 
@@ -259,25 +229,18 @@ const Home = () => {
             threshold: 0.1,
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-        const observerOptions = {
-            threshold: 0.1,
-        };
-
+        
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-office-bearers');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
-                    entry.target.classList.add('animate-office-bearers');
-                    entry.target.classList.remove('hidden');
-                    observer.unobserve(entry.target);
+                    
                 }
             });
         }, observerOptions);
-        }, observerOptions);
+        
 
         if (officeRef.current) {
             observer.observe(officeRef.current);
@@ -290,12 +253,7 @@ const Home = () => {
             }
         });
 
-        cardsRef.current.forEach(card => {
-            if (card) {
-                card.classList.add('hidden');
-                observer.observe(card);
-            }
-        });
+        
 
         return () => {
             if (officeRef.current) {
@@ -306,11 +264,7 @@ const Home = () => {
                     observer.unobserve(card);
                 }
             });
-            cardsRef.current.forEach(card => {
-                if (card) {
-                    observer.unobserve(card);
-                }
-            });
+            
         };
     }, []);
         
@@ -501,10 +455,6 @@ const Home = () => {
                 </div>
             </div>
 
-
-
-
-            <div ref={amenitiesRef} className="amenities hidden">
             <div ref={amenitiesRef} className="amenities hidden">
                 <div className="amenities-gallery">
                     <AmenitiesImages />
@@ -530,9 +480,6 @@ const Home = () => {
                         The Pongala festival of the Temple is the largest women gathering festival in the world. This entered in the Guinness Book of World Records in 1997 and 2009 for participating 15 lakhs and 25 lakhs respectively.
                     </p>
                 </div>
-
-
-
             </div>
             
         </div>
@@ -540,6 +487,3 @@ const Home = () => {
 }
 
 export default Home;
-
-
-
