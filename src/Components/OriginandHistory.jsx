@@ -1,4 +1,3 @@
-
 import React from 'react';
 import attukalamma from '../assets/attukalamma.jpg';
 import attukalamma2 from '../assets/attukalamma2.jpg';

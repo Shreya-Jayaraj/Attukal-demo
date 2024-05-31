@@ -1,12 +1,3 @@
-// const Upadevas = () => {
-//     return ( 
-//         <h1>Upadevas</h1>
-//      );
-// }
- 
-// export default Upadevas;
-
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import shiva from "../assets/shiva2.png";

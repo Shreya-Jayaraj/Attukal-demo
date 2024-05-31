@@ -381,7 +381,7 @@ const Home = () => {
             </div>
 
             <div ref={historyRef} className="history-card hidden">
-                    <div className="image-container">
+                    <div className="history-image-container">
                         <img src={devi2} alt='Devi' />
                     </div>
                     <div className="history-content">
