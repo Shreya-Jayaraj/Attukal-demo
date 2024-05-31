@@ -18,7 +18,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/attukal.temple/">
               <img src={facebook}></img>
             </a>
-            <a href="#">
+            <a href="https://www.youtube.com/@attukal_temple">
               <img src={youtube}></img>
             </a>
             <a href="#">
