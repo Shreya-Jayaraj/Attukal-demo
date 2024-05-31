@@ -163,3 +163,7 @@
 .learn-more-btn:hover{
   background-color: rgb(150,0,0);
 }
+
+.hidden{
+  opacity: 0;
+}

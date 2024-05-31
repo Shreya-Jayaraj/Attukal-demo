@@ -138,17 +138,34 @@ const Home = () => {
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-history');
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
                     entry.target.classList.add('animate-history');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
+        }, observerOptions);
 
         if (historyRef.current) {
             observer.observe(historyRef.current);
         }
+
+        cardsRef.current.forEach(card => {
+            if (card) {
+                card.classList.add('hidden');
+                observer.observe(card);
+            }
+        });
 
         cardsRef.current.forEach(card => {
             if (card) {
@@ -166,6 +183,11 @@ const Home = () => {
                     observer.unobserve(card);
                 }
             });
+            cardsRef.current.forEach(card => {
+                if (card) {
+                    observer.unobserve(card);
+                }
+            });
         };
     }, []);
 
@@ -177,17 +199,34 @@ const Home = () => {
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-vazhipad');
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
                     entry.target.classList.add('animate-vazhipad');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
+        }, observerOptions);
 
         if (vazhipadRef.current) {
             observer.observe(vazhipadRef.current);
         }
+
+        cardsRef.current.forEach(card => {
+            if (card) {
+                card.classList.add('hidden');
+                observer.observe(card);
+            }
+        });
 
         cardsRef.current.forEach(card => {
             if (card) {
@@ -205,6 +244,11 @@ const Home = () => {
                     observer.unobserve(card);
                 }
             });
+            cardsRef.current.forEach(card => {
+                if (card) {
+                    observer.unobserve(card);
+                }
+            });
         };
     }, []);
 
@@ -217,12 +261,22 @@ const Home = () => {
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-office-bearers');
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
                     entry.target.classList.add('animate-office-bearers');
                     entry.target.classList.remove('hidden');
                     observer.unobserve(entry.target);
                 }
             });
+        }, observerOptions);
         }, observerOptions);
 
         if (officeRef.current) {
@@ -236,10 +290,22 @@ const Home = () => {
             }
         });
 
+        cardsRef.current.forEach(card => {
+            if (card) {
+                card.classList.add('hidden');
+                observer.observe(card);
+            }
+        });
+
         return () => {
             if (officeRef.current) {
                 observer.unobserve(officeRef.current);
             }
+            cardsRef.current.forEach(card => {
+                if (card) {
+                    observer.unobserve(card);
+                }
+            });
             cardsRef.current.forEach(card => {
                 if (card) {
                     observer.unobserve(card);
@@ -360,7 +426,7 @@ const Home = () => {
                 </video>
             </div>
 
-            <div ref={historyRef} className="history-card">
+            <div ref={historyRef} className="history-card hidden">
                     <div className="image-container">
                         <img src={devi2} alt='Devi' />
                     </div>
@@ -382,7 +448,7 @@ const Home = () => {
 
 
                 <div>
-            <div ref={vazhipadRef} className="vazhipad-container">
+            <div ref={vazhipadRef} className="vazhipad-container hidden">
                 <section>
                     <div className="container">
                         <h2>Vazhipadukal</h2>
@@ -417,7 +483,7 @@ const Home = () => {
             </div>
 
 
-            <div ref={officeRef} className="office-bearers-container">
+            <div ref={officeRef} className="office-bearers-container hidden">
                 <h2>Office Bearers</h2>
                 <div className="office-bearers-cards">
                     {officeBearers.map((bearer, i) => (
@@ -439,6 +505,7 @@ const Home = () => {
 
 
             <div ref={amenitiesRef} className="amenities hidden">
+            <div ref={amenitiesRef} className="amenities hidden">
                 <div className="amenities-gallery">
                     <AmenitiesImages />
                 </div>
@@ -453,7 +520,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div ref={awardsRef} className="awards">
+            <div ref={awardsRef} className="awards hidden">
                 <div className="award-image">
                     <img  src={guiness} alt="guiness-image"></img>
                 </div>
@@ -473,4 +540,6 @@ const Home = () => {
 }
 
 export default Home;
+
+
 

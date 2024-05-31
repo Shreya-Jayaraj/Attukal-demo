@@ -85,7 +85,7 @@
 .history-body {
     margin: 20px 0;
     align-items: left ;
-    align-items: right;
+    align-items: right;
 }
 
 
@@ -136,3 +136,7 @@
         font-size: 0.9rem;
     }
 }
+
+.hidden{
+    opacity: 0;
+  }

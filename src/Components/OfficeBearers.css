@@ -124,3 +124,7 @@
         width: calc(100% - 20px); /* Display 1 card in a row */
     }
 }
+
+.hidden{
+    opacity: 0;
+  }
