@@ -16,6 +16,9 @@
 .animate-office-bearers {
     animation: slideInFromRight 1s ease-out forwards;
   }
+.hidden{
+    opacity:0;
+}
 .office-bearers-container h2{
     color:maroon;
     text-align: center;

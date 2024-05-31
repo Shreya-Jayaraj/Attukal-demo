@@ -35,6 +35,9 @@
 .animate-vazhipad {
   animation: slideInFromLeft 1s ease-out forwards;
 }
+.hidden{
+  opacity:0;
+}
 .vazhipad-container::before{
   content: '';
   position: absolute;

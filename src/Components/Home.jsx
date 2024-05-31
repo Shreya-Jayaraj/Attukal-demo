@@ -29,29 +29,29 @@ const Home = () => {
     const [cards] = useState([
         {
             title: 'Udayasthamana Pooja',
-            text: 'This pooja is performed for attaining all prosperity.'
+            text: 'This pooja is performed for attaining all prosperity. More Info about the vazhipad will be put up here'
         },
         {
             title: 'Aayur Sooktham Archana',
-            text: 'This pooja is performed for the long life'
+            text: 'This pooja is performed for the long life. More Info about the vazhipad will be put up here'
             
         },
         {
             title: 'Bhagavathi Seva',
-            text: 'This pooja is performed for prosperity'
+            text: 'This pooja is performed for prosperity. More Info about the vazhipad will be put up here'
         },
         {
             title: 'Chuttuvilakku',
-            text: 'This pooja is performed for redemption of sin, peace of mind'
+            text: 'This pooja is performed for redemption of sin, peace of mind. More Info about the vazhipad will be put up here'
             
         },
         {
             title: 'Kamba Vilakku',
-            text: 'This pooja is performed for attaining what is desired'
+            text: 'This pooja is performed for attaining what is desired. More Info about the vazhipad will be put up here'
         },
         {
             title: 'Ayilya Pooja',
-            text: ' This pooja is performed for propitiating the serpents, alleviating skin ailments'
+            text: ' This pooja is performed for propitiating the serpents, alleviating skin ailments. More Info about the vazhipad will be put up here'
         },
 
     ]);
@@ -100,9 +100,24 @@ const Home = () => {
     const handleAmenitiesClick = () => {
         navigate("/amenities");
     }
+    const cardsRef = useRef([]);
 
     useEffect(() => {
         const audio = new Audio(music);
+        let playCount = 0;
+
+        const handleAudioEnd = () => {
+            playCount += 1;
+            if (playCount < 2) {
+                audio.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                });
+            } else {
+                audio.removeEventListener('ended', handleAudioEnd);
+            }
+        };
+
+        audio.addEventListener('ended', handleAudioEnd);
         audio.play().catch(error => {
             console.error('Audio playback failed:', error);
         });
@@ -110,140 +125,210 @@ const Home = () => {
         return () => {
             audio.pause();
             audio.currentTime = 0;
+            audio.removeEventListener('ended', handleAudioEnd);
         };
     }, []);
 
+
     const historyRef = useRef(null);
     useEffect(() => {
-        const observer = new IntersectionObserver((entries1) => {
-            entries1.forEach(entry => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // When the .amenities section comes into view, add the .animate-amenities class
-                    entry.target.classList.add("animate-history");
-                    // Disconnect the observer to improve performance
-                    observer.disconnect();
+                    entry.target.classList.add('animate-history');
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, observerOptions);
 
         if (historyRef.current) {
             observer.observe(historyRef.current);
         }
 
-        // Clean up
+        cardsRef.current.forEach(card => {
+            if (card) {
+                card.classList.add('hidden');
+                observer.observe(card);
+            }
+        });
+
         return () => {
             if (historyRef.current) {
                 observer.unobserve(historyRef.current);
             }
+            cardsRef.current.forEach(card => {
+                if (card) {
+                    observer.unobserve(card);
+                }
+            });
         };
     }, []);
 
     const vazhipadRef = useRef(null);
     useEffect(() => {
-        const observer = new IntersectionObserver((entries2) => {
-            entries2.forEach(entry => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // When the .amenities section comes into view, add the .animate-amenities class
-                    entry.target.classList.add("animate-vazhipad");
-                    // Disconnect the observer to improve performance
-                    observer.disconnect();
+                    entry.target.classList.add('animate-vazhipad');
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, observerOptions);
 
         if (vazhipadRef.current) {
             observer.observe(vazhipadRef.current);
         }
 
-        // Clean up
+        cardsRef.current.forEach(card => {
+            if (card) {
+                card.classList.add('hidden');
+                observer.observe(card);
+            }
+        });
+
         return () => {
             if (vazhipadRef.current) {
                 observer.unobserve(vazhipadRef.current);
             }
+            cardsRef.current.forEach(card => {
+                if (card) {
+                    observer.unobserve(card);
+                }
+            });
         };
     }, []);
 
     const officeRef = useRef(null);
 
-    // Intersection Observer
     useEffect(() => {
-        const observer = new IntersectionObserver((entries4) => {
-            entries4.forEach(entry => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // When the .amenities section comes into view, add the .animate-amenities class
-                    entry.target.classList.add("animate-office-bearers");
-                    // Disconnect the observer to improve performance
-                    observer.disconnect();
+                    entry.target.classList.add('animate-office-bearers');
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, observerOptions);
 
         if (officeRef.current) {
             observer.observe(officeRef.current);
         }
 
-        // Clean up
+        cardsRef.current.forEach(card => {
+            if (card) {
+                card.classList.add('hidden');
+                observer.observe(card);
+            }
+        });
+
         return () => {
             if (officeRef.current) {
                 observer.unobserve(officeRef.current);
             }
+            cardsRef.current.forEach(card => {
+                if (card) {
+                    observer.unobserve(card);
+                }
+            });
         };
     }, []);
         
     const amenitiesRef = useRef(null);
-
-    // Intersection Observer
+    
     useEffect(() => {
-        const observer = new IntersectionObserver((entries3) => {
-            entries3.forEach(entry => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // When the .amenities section comes into view, add the .animate-amenities class
-                    entry.target.classList.add("animate-amenities");
-                    // Disconnect the observer to improve performance
-                    observer.disconnect();
+                    entry.target.classList.add('animate-amenities');
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, observerOptions);
 
         if (amenitiesRef.current) {
             observer.observe(amenitiesRef.current);
         }
 
-        // Clean up
+        cardsRef.current.forEach(card => {
+            if (card) {
+                card.classList.add('hidden');
+                observer.observe(card);
+            }
+        });
+
         return () => {
             if (amenitiesRef.current) {
                 observer.unobserve(amenitiesRef.current);
             }
+            cardsRef.current.forEach(card => {
+                if (card) {
+                    observer.unobserve(card);
+                }
+            });
         };
     }, []);
 
     const awardsRef = useRef(null);
 
-    // Intersection Observer
     useEffect(() => {
-        const observer = new IntersectionObserver((entries5) => {
-            entries5.forEach(entry => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // When the .amenities section comes into view, add the .animate-amenities class
-                    entry.target.classList.add("animate-awards");
-                    // Disconnect the observer to improve performance
-                    observer.disconnect();
+                    entry.target.classList.add('animate-awards');
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, observerOptions);
 
         if (awardsRef.current) {
             observer.observe(awardsRef.current);
         }
 
-        // Clean up
+        cardsRef.current.forEach(card => {
+            if (card) {
+                card.classList.add('hidden');
+                observer.observe(card);
+            }
+        });
+
         return () => {
             if (awardsRef.current) {
                 observer.unobserve(awardsRef.current);
             }
+            cardsRef.current.forEach(card => {
+                if (card) {
+                    observer.unobserve(card);
+                }
+            });
         };
     }, []);
 
+    
     return (
         <div className='home'>
             <div className='first-line'>
@@ -353,7 +438,7 @@ const Home = () => {
 
 
 
-            <div ref={amenitiesRef} className="amenities">
+            <div ref={amenitiesRef} className="amenities hidden">
                 <div className="amenities-gallery">
                     <AmenitiesImages />
                 </div>

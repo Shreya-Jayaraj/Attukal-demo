@@ -115,6 +115,10 @@
   animation: slideInFromLeft 1s ease-out forwards;
 }
 
+.hidden{
+  opacity: 0;
+}
+
 
 .amenities-gallery{
   width:30%;
