@@ -15,7 +15,7 @@ const Footer = () => {
         <h3 className="footer-heading">Attukal Bhagavathy Temple Trust</h3>
         <img className="footer-image" src={devihome}></img>
         <div className='socials'>
-            <a href="#">
+            <a href="https://www.facebook.com/attukal.temple/">
               <img src={facebook}></img>
             </a>
             <a href="#">
