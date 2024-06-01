@@ -1,0 +1,143 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.activities-container {
+    padding: 2rem;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  .activities-container h1 {
+    color: maroon;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .activities-intro{
+    text-align: justify;
+    margin-bottom: 20px;
+    background-color: #fdfdfd;
+    padding:10px;
+    width:90%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border:#e6e2e2 solid 1px;
+    border-radius: 10px;
+  }
+  
+  .activities-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin:10px;
+  }
+  
+  .activity-card {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.6s;
+  }
+  
+  .activity-card img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .activity-card h4 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .card-back {
+    padding: 1rem;
+    background-color: #f8f8f8;
+  }
+  
+  .card-back p {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+  }
+
+  .arrow-icon {
+    position: absolute;
+    cursor: pointer;
+    bottom: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover .arrow-icon {
+    transform: scale(1.1);
+}
+
+  @media (max-width: 1024px) {
+    .activity-card {
+      max-width: 250px;
+      height: 350px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .activity-card {
+      max-width: 200px;
+      height: 300px;
+    }
+  
+    .activity-card h4 {
+      font-size: 1rem;
+    }
+  
+    .card-back p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .activities-card-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .activity-card {
+      max-width: 90%;
+      height: auto;
+    }
+  
+    .activity-card img {
+      width: 70%;
+    }
+  
+    .activity-card h4 {
+      font-size: 0.9rem;
+    }
+  
+    .card-back p {
+      font-size: 0.8rem;
+    }
+  }
+  

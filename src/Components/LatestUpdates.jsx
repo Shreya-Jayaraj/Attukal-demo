@@ -1,12 +1,14 @@
 import React from 'react'
 import './Scroll.css';
 import Records from '../announcements.json';
+import { useTranslation } from 'react-i18next';
 
 const LatestUpdates = () => {
+    const {t} = useTranslation('announcementstrans') 
   return (
     <div className='announcements-parent'>
         <div className='heading'>
-                <h3>LATEST UPDATES</h3>
+                <h3>{t("latestupdates")}</h3>
             </div>
         <div className='announcements'>
             

@@ -1,11 +1,21 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .amenities-container {
     text-align: center;
     padding: 20px;
+    animation: fadeIn 0.5s ease forwards;
   }
 
   .amenities-container h1{
     color: maroon;
-    font-size: 100%;
+    font-size: 2rem;
   }
   
   .image-grid {
@@ -21,7 +31,6 @@
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .image-item img {
@@ -29,6 +38,11 @@
     height: auto;
     display: block;
     border-radius: 8px;
-    object-fit: contain;
+    object-fit: cover;
   }
   
+  @media screen and (max-width: 600px){
+    .amenities-container h1{
+    font-size: 2rem;
+    }
+  }

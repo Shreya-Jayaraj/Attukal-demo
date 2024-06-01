@@ -2,15 +2,20 @@ import './Navbar.css';
 import {NavLink, Link} from 'react-router-dom';
 import { useState } from 'react';
 import home from '../assets/home.png';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
-
+    
+    const {t, i18n} = useTranslation('navbar') 
+    const isMalayalam = i18n.language === 'mal';
     const [menuOpen, setMenuOpen] = useState(false)
     return ( 
         <nav>
             <div className='left-section'>
                 <img src={home} alt="Home" className='home-icon' />
-                <Link to='/' className='title'>Attukal Bhagavathy Temple</Link>
+                <Link to='/' className={`title ${isMalayalam ? 'malayalam-content' : ''}`}>
+                    {t("title")}
+                </Link>
             </div>  
 
             <div className='menu' onClick={() =>{
@@ -21,21 +26,24 @@ const Navbar = () => {
                 <span></span>
             </div>
             
-            <ul className={menuOpen ? "open" : ""}>
+            <ul className={`${menuOpen ? "open" : ""} ${isMalayalam ? 'malayalam-content' : ''}`}>
                 <li>
-                    <NavLink to='/origin&history'> Origin & History</NavLink>  
-                </li>
-                <li>  
-                    <NavLink to='/office-bearers'> Office Bearers</NavLink>  
-                </li>
-                <li>  
-                    <NavLink to='/amenities'> Amenities</NavLink>   
+                    <NavLink to='/origin&history'> {t("origin_history")}</NavLink>  
                 </li>
                 <li>
-                    <NavLink to='/upadevas'> Upadevas</NavLink>
+                    <NavLink to='/upadevas'> {t("upadevas")}</NavLink>
                 </li>
                 <li>  
-                    <NavLink to='/festivals'> Festivals</NavLink>   
+                    <NavLink to='/activities'> {t("activities")}</NavLink>   
+                </li>
+                <li>  
+                    <NavLink to='/festivals'> {t("festivals")}</NavLink>   
+                </li>
+                <li>  
+                    <NavLink to='/office-bearers'> {t("office_bearers")}</NavLink>  
+                </li>
+                <li>  
+                    <NavLink to='/amenities'> {t("amenities")}</NavLink>   
                 </li>
             </ul>
         </nav>

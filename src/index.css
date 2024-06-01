@@ -36,7 +36,7 @@ html, body {
 
 .content{
   flex: 1;
-  padding: 40px;
+  padding: 20px;
 }
 
 a{
@@ -46,4 +46,10 @@ a{
   cursor: pointer;
 }
 
+
+.malayalam-content {
+  font-size: 0.8em; 
+  letter-spacing: -0.08em;
+  word-spacing: 0.3rem;
+}
 

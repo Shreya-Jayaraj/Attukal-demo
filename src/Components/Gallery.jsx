@@ -4,6 +4,7 @@ import nadaImage from "../assets/nada.avif";
 import GopuramImage from "../assets/gopuram.webp";
 import prathishtaImage from "../assets/prathishta.jpg";
 import './Gallery.css';
+import { useTranslation } from 'react-i18next';
 
 const images = [
   {
@@ -18,9 +19,13 @@ const images = [
 ];
 
 const Gallery = () => {
+
+  const {t, i18n} = useTranslation('home') 
+  const isMalayalam = i18n.language === 'mal';
+
   return (
-    <div className="gallery">
-      <h2>GALLERY</h2>
+    <div className={`gallery ${isMalayalam ? 'malayalam-content' : ''}`}>
+      <h2>{t("gallery")}</h2>
       <ImageGallery 
         items={images} 
         showPlayButton={false}

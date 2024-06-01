@@ -7,38 +7,49 @@
     }
 }
 
-.oh-container h1{
+.oh-container h1 {
     text-align: center;
-    color:maroon
+    color: maroon;
 }
 
-.oh-card{
-    display:flex;
-    justify-content: space-around;
-    align-items: space-around;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    flex-wrap: wrap;
-    animation:fadeIn 0.5s ease forwards;
-
-}
-
-.oh-card p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 60rem;;
-    line-height: 30px;
-    padding: 15px 15px;
-    text-align: left;
+.oh-card {
+    animation: fadeIn 0.5s ease forwards;
     background-color: rgb(250, 245, 245);
-    border: black solid 1px;
-    box-shadow: black 2px;
+    border: solid 1px black;
+    box-shadow: 2px 2px black;
     border-radius: 10px;
+    padding: 15px;
+    margin: 2rem;
 }
 
-.oh-card img{
-    max-height:20rem;
-    max-width: 15rem;
-    padding: 10px 10px;
+.oh-card img {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 7px;
+    max-height: 80%;
+    max-width: 40%;
+    border-radius: 10px;
+    object-fit: cover;
 }
+
+.oh-card p {
+    line-height: 1.5;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .oh-card img {
+        float: none;
+        width:auto;
+        height: 100%;
+        display: block;
+        margin: 0 auto 15px auto;
+    }
+
+    .oh-card p {
+        text-align: center;
+    }
+}
+
+
+

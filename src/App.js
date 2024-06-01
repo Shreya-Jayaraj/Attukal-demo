@@ -14,8 +14,7 @@ import OfficeBearers from './Components/OfficeBearers';
 import AmenitiesPage from './Components/AmenitiesPage';
 import ScrollToTop from './Components/ScrollToTop';
 import music from '../src/assets/music.mp3';
-
-
+import LanguageSelector from './Components/LanguageSelector';
 
 function App() {
   
@@ -30,12 +29,15 @@ function App() {
       audio.currentTime = 0;
     };
   }, []);
+
+
   return (    
     <Router>
       <ScrollToTop />
       <div className="App">
         <Navbar/>
         <div className='content'>
+          <LanguageSelector/>
           <Routes>
             <Route path='/' element = {<Home/>}/>
             <Route path='/origin&history' element = {<OriginandHistory/>}/>
