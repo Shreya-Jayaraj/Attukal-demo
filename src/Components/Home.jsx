@@ -12,8 +12,9 @@ import Modal from './Modal';
 import AmenitiesImages from './AmenitiesImages';
 import './OfficeBearers.css';
 import attukalvideo2 from '../assets/attukalvideo2.mp4';
-import guiness from '../assets/guinness.png'
-
+import guiness2 from '../assets/guinness2.png'
+import music from '../assets/music.mp3';
+import { useTranslation } from 'react-i18next';
 
 import SVenugopal from '../assets/SVenugopal.png';
 import Vsobha from '../assets/Vsobha.png';
@@ -21,49 +22,21 @@ import PKkrishnannair from '../assets/PKkrishnannair.png';
 import Saratkumar from '../assets/Saratkumar.png';
 import ASanumodh from '../assets/ASanumodh.png';
 import Geethakumari from '../assets/Geethakumari.png';
-import music from '../assets/music.mp3';
+
 
 const Home = () => {
+    const {t, i18n} = useTranslation(['home','common','vazhipad','vazhipadcards','officebearers']);
+    const vazhipads = t('vazhipads', { ns: 'vazhipadcards', returnObjects: true });
+    const isMalayalam = i18n.language === 'mal';
 
-
-    const [cards] = useState([
-        {
-            title: 'Udayasthamana Pooja',
-            text: 'This pooja is performed for attaining all prosperity. More Info about the vazhipad will be put up here'
-        },
-        {
-            title: 'Aayur Sooktham Archana',
-            text: 'This pooja is performed for the long life. More Info about the vazhipad will be put up here'
-            
-        },
-        {
-            title: 'Bhagavathi Seva',
-            text: 'This pooja is performed for prosperity. More Info about the vazhipad will be put up here'
-        },
-        {
-            title: 'Chuttuvilakku',
-            text: 'This pooja is performed for redemption of sin, peace of mind. More Info about the vazhipad will be put up here'
-            
-        },
-        {
-            title: 'Kamba Vilakku',
-            text: 'This pooja is performed for attaining what is desired. More Info about the vazhipad will be put up here'
-        },
-        {
-            title: 'Ayilya Pooja',
-            text: ' This pooja is performed for propitiating the serpents, alleviating skin ailments. More Info about the vazhipad will be put up here'
-        },
-
-    ]);
-    const [officeBearers] = useState([
-        { name: 'Sri S Venugopal', position: 'Chairman', image: SVenugopal  },
-        { name: 'Smt V Sobha', position: 'President', image: Vsobha  },
-        { name: 'Sri P.K. Krishnan Nair', position: 'Vice President', image: PKkrishnannair  },
-        { name: 'Sri Sarat Kumar', position: 'Secretary', image: Saratkumar  },
-        { name: 'Sri A.S. Anumodh', position: 'Joint Secretary', image: ASanumodh  },
-        { name: 'Smt Geetha Kumari.A', position: 'Treasurer', image: Geethakumari  },
-        
-    ]);
+    const officeBearers = [
+        { nameKey: '0.name', positionKey: '0.position', image: SVenugopal },
+        { nameKey: '1.name', positionKey: '1.position', image: Vsobha },
+        { nameKey: '2.name', positionKey: '2.position', image: PKkrishnannair },
+        { nameKey: '3.name', positionKey: '3.position', image: Saratkumar },
+        { nameKey: '4.name', positionKey: '4.position', image: ASanumodh },
+        { nameKey: '5.name', positionKey: '5.position', image: Geethakumari },
+      ];
 
     const [showModal, setShowModal ] = useState(false);
     const [modalContent, setModalContent ] = useState(null);
@@ -77,7 +50,6 @@ const Home = () => {
     const handleCardClick = (card) => {
         setModalContent(
             <div>
-                {/* <h3>{card.title}</h3> */}
                 <p>{card.text}</p>
             </div>
         );
@@ -380,104 +352,93 @@ const Home = () => {
                 </video>
             </div>
 
-            <div ref={historyRef} className="history-card hidden">
+            <div ref={historyRef} className={`history-card hidden ${isMalayalam ? 'malayalam-content' : ''}`}>
                     <div className="history-image-container">
                         <img src={devi2} alt='Devi' />
                     </div>
                     <div className="history-content">
                         <div className="history-title">
-                            <h3>Origin & History</h3>
+                            <h3>{t("oh-title", { ns: 'home' })}</h3>
                         </div>
                         <div className="history-body">
-                            <p>The story goes that the Goddess Bhagavathy revealed herself to a fervent devotee of a notable family viz. Mulluveettil family. It is said that one evening a young girl appeared before the head of the family while he was performing his oblations in the Killi river and requested him to help her cross the river. Impressed by her charismatic demeanour, the- old man bent before her with awe and reverence and not only helped her cross the river but took her to his house nearby. </p>
+                            <p>{t("oh-content", { ns: 'home' })} </p>
                         </div>
                         <div className='btn'>
                             <button onClick={handleReadMoreClick}>
-                                <a>Read More</a>
+                                <a>{t("read", { ns: 'common' })}</a>
                             </button>
                         </div>
                     </div>
-                    
                 </div>
+            <div>
 
-
-                <div>
-            <div ref={vazhipadRef} className="vazhipad-container hidden">
+            <div ref={vazhipadRef} className={`vazhipad-container hidden ${isMalayalam ? 'malayalam-content' : ''}`}>
                 <section>
                     <div className="container">
-                        <h2>Vazhipadukal</h2>
+                        <h2>{t('Vazhipadukal', { ns: 'home' })}</h2>
                         <div className="cards">
-                            {cards.map((card, i) => {
+                            {vazhipads.map((card, i) => {
                                 return (
                                     <div key={i} className="card" onClick={() => handleCardClick(card)}>
                                         <h3>{card.title}
                                         </h3>
-                                        {/* <p>
-
-                                            {card.text}
-                                        </p> */}
                                     </div>
-
-
                                 );
                             })}
 
                         </div>
                         <div className="learn-more-container">
-                            <button className="learn-more-btn" onClick={handleLearnMoreClick}>Learn More</button>
+                            <button className="learn-more-btn" onClick={handleLearnMoreClick}>{t("read", { ns: 'common' })}</button>
                         </div>
                     </div>
-
                 </section>
-
             </div>
             <Modal show={showModal} onClose={closeModal} content={modalContent}/>
-            
-
             </div>
 
-
-            <div ref={officeRef} className="office-bearers-container hidden">
-                <h2>Office Bearers</h2>
+            <div ref={officeRef} className={`office-bearers-container hidden ${isMalayalam ? 'malayalam-content' : ''}`}>
+                <h2>{t('officeBearersTitle', { ns:'officebearers' })}</h2>
                 <div className="office-bearers-cards">
                     {officeBearers.map((bearer, i) => (
-                        <div key={i} className="office-bearer-card">
-                            <img src={bearer.image} alt={bearer.name} />
-                            <div className="office-bearer-details">
-                                <h3>{bearer.name}</h3>
-                                <p>{bearer.position}</p>
-                            </div>
+                    <div key={i} className="office-bearer-card">
+                        <img src={bearer.image} alt={t(`officeBearers.${i}.name`, { ns: 'officebearers' })} />
+                        <div className="office-bearer-details">
+                        <h3>{t(`officeBearers.${i}.name`, { ns: 'officebearers' })}</h3>
+                        <p>{t(`officeBearers.${i}.position`, { ns: 'officebearers' })}</p>
                         </div>
+                    </div>
                     ))}
                 </div>
                 <div className="office-bearers-button-container">
-                    <button className="office-bearers-btn" onClick={handleOfficeBearersClick}>View All</button>
+                    <button className="office-bearers-btn" onClick={handleOfficeBearersClick}>
+                    {t('viewAll', { ns:'common' })}
+                    </button>
                 </div>
             </div>
 
-            <div ref={amenitiesRef} className="amenities hidden">
+            <div ref={amenitiesRef} className={`amenities hidden ${isMalayalam ? 'malayalam-content' : ''}`}>
                 <div className="amenities-gallery">
                     <AmenitiesImages />
                 </div>
                 <div className='amenities-text'>   
-                    <h4>AMENITIES</h4>
-                    <p>Attukal Temple offers a variety of facilities for devotees, including Nadapandal for shelter and events, Visrama Sanketham for rest and meals, and various dormitory and room options. The temple also features three auditoriums for events, a hospital building leased for medical services, and tourist bus services for pilgrim tourism. Additional amenities include online booking for services and divine gold lockets available for purchase.
+                    <h4>{t("amenities-title", { ns: 'home' })}</h4>
+                    <p>{t("amenities-content", { ns: 'home' })}
                     </p>
                     <div className='btn'>
                             <button onClick={handleAmenitiesClick}>
-                                <a>Read More</a>
+                                <a>{t("read", { ns: 'common' })}</a>
                             </button>
                     </div>
                 </div>
             </div>
-            <div ref={awardsRef} className="awards hidden">
+            <div ref={awardsRef} className={`awards hidden ${isMalayalam ? 'malayalam-content' : ''}`} >
                 <div className="award-image">
-                    <img  src={guiness} alt="guiness-image"></img>
+                    <img  src={guiness2} alt="guiness-image"></img>
                 </div>
                 <div className='awards-content'>
-                    <h4>GUINNESS BOOK OF WORLD RECORDS</h4>
+                    <h4>{t("aw-title", { ns: 'home' })}</h4>
                     <p>
-                        The Pongala festival of the Temple is the largest women gathering festival in the world. This entered in the Guinness Book of World Records in 1997 and 2009 for participating 15 lakhs and 25 lakhs respectively.
+                    {t("aw-content", { ns: 'home' })}
                     </p>
                 </div>
             </div>
