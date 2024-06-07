@@ -21,6 +21,7 @@ import Saratkumar from '../assets/Saratkumar.png';
 import ASanumodh from '../assets/ASanumodh.png';
 import Geethakumari from '../assets/Geethakumari.png';
 import devi2 from '../assets/devi2.jpg';
+import des from '../assets/des.png'
 
 const Home = () => {
   const { t, i18n } = useTranslation(['home', 'common', 'vazhipad', 'vazhipadcards', 'officebearers']);
@@ -156,23 +157,33 @@ const Home = () => {
   return (
     <div className='home'>
         <div className='first-line'>
-            <div className="announcement-flex">
+          <div className='left-side'>
+          <img src={des} alt="design-2"/>
+            <div className="left-text">
+              <h2 className={` ${isMalayalam ? 'malayalam-content' : ''}`}> <strong>{t("t-heading")}</strong> </h2>
+              <p>4:30 am - 12:30 pm</p>
+              <p>5:00 pm - 8:30pm</p>
+            </div>
+            <img src={des} alt="design-3"/>
+          </div>
+          <div className="image-flex">
+              <img src={devihome} alt="devi-image"></img>
+              
+              <div className="slogam">
+                  <p>സർവ്വമംഗള   മംഗല്യേ ശിവേ  സർവാർത്ഥ  സാധികേ।</p>
+                  <p>ശരണ്യേ ത്രയംബകേ ഗൗരി  നാരായണീ നമോസ്തുതേ॥</p>
+              </div>
+          </div>
+          <div className='right-side'>
+            <div className="announcements-flex">
                 <Announcements />
             </div>
-            <div className="image-flex">
-                <img className="image" src={devihome} alt="devi-image"></img>
-                <div className="slogam">
-                    <p>സർവ്വമംഗള   മംഗല്യേ ശിവേ  സർവാർത്ഥ  സാധികേ।</p>
-                    <p>ശരണ്യേ ത്രയംബകേ ഗൗരി  നാരായണീ നമോസ്തുതേ॥</p>
-                    
-                </div>
-                
-            </div>
-            <div className="announcement-flex">
+            
+            <div className="announcements-flex">
                 <LatestUpdates />
             </div>
-        </div>
-
+          </div>
+      </div>
         <div className="gallery-container">
             <Gallery  />
         </div>
@@ -274,7 +285,6 @@ const Home = () => {
                 </p>
             </div>
         </div>
-        
     </div>
 );
 }

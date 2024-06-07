@@ -36,7 +36,7 @@ html, body {
 
 .content{
   flex: 1;
-  padding: 20px;
+  padding: 2vh;
 }
 
 a{
@@ -51,5 +51,6 @@ a{
   font-size: 0.8em; 
   letter-spacing: -0.08em;
   word-spacing: 0.3rem;
+  font-family: 'Noto Sans Malayalam';
 }
 
