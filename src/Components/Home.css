@@ -176,16 +176,15 @@
 .image-gallery-section {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
   gap: 10px;
   justify-content: center;
   margin: 20px 0;
   border: 8px solid maroon;
   border-radius: 10px;
-  width: 90%; /* Changed width to percentage for responsiveness */
-  max-width: 68.75em; /* Set a maximum width */
+  width: 90%;
+  max-width: 68.75rem;
   margin-bottom: 30px;
-  /* background-color: rgba(128, 0, 0, 0.2); */
+  padding: 20px;
 }
 
 .gallery-heading {
@@ -199,12 +198,12 @@
 
 .image-card {
   position: relative;
-  width: calc(25% - 10px); /* Adjust width for responsiveness */
+  width: calc(12.5% - 10px); /* 8 images per row for large screens */
   height: 0;
-  padding-bottom: 25%; /* Maintain aspect ratio */
+  padding-bottom: 12.5%; /* Maintain aspect ratio */
   overflow: hidden;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0);
   transition: transform 0.3s;
 }
 
@@ -235,6 +234,7 @@
   left: 0;
   width: 100%;
   padding: 10px;
+  font-size: 13px;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   text-wrap: wrap;
@@ -281,24 +281,30 @@
 /* Tablets and larger */
 @media (min-width: 768px) and (max-width: 1023px) {
   .image-card {
-      width: calc(33.33% - 10px); /* 3 images per row */
-      padding-bottom: 33.33%; /* Maintain aspect ratio */
+    width: calc(33.33% - 10px); /* 3 images per row */
+    padding-bottom: 33.33%; /* Maintain aspect ratio */
   }
 }
 
 /* Mobile devices */
 @media (max-width: 767px) {
   .image-card {
-      width: calc(50% - 10px); /* 2 images per row */
-      padding-bottom: 50%; /* Maintain aspect ratio */
+    width: calc(50% - 10px); /* 2 images per row */
+    padding-bottom: 50%; /* Maintain aspect ratio */
   }
 }
 
 /* Smaller mobile devices */
 @media (max-width: 480px) {
   .image-card {
-      width: calc(100% - 10px); /* 1 image per row */
-      padding-bottom: 100%; /* Maintain aspect ratio */
+    width: calc(100% - 10px); /* 1 image per row */
+    padding-bottom: 100%; /* Maintain aspect ratio */
+  }
+  .image-card img {
+    width: 80%; /* Reduce the width of the image */
+    height: 80%; /* Reduce the height of the image */
+    left: 10%; /* Center the image horizontally */
+    top: 10%; /* Center the image vertically */
   }
 }
 
