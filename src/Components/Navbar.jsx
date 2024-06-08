@@ -10,7 +10,8 @@ const Navbar = () => {
     
     const {t, i18n} = useTranslation('navbar') 
     const isMalayalam = i18n.language === 'mal';
-    const [menuOpen, setMenuOpen] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false);
+    
     return ( 
         <nav>
             <div className='left-section'>
