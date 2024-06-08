@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useState } from 'react';
 import home from '../assets/home.png';
 import { useTranslation } from 'react-i18next';
+import languageIcon from '../assets/languageIcon.png';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation('navbar');
@@ -23,7 +24,9 @@ const Navbar = () => {
           {t("title")}
         </Link>
         <div className="language-selector" onClick={() => setDropdownOpen(!dropdownOpen)}>
-          <button className="language-btn">Language</button>
+          <button className="language-btn">
+            <img src={languageIcon} alt="Language" className="language-icon" />
+          </button>
           {dropdownOpen && (
             <div className="language-dropdown">
               <button onClick={() => handleLanguageChange('en')}>English</button>

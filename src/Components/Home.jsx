@@ -22,11 +22,11 @@ import ASanumodh from '../assets/ASanumodh.png';
 import Geethakumari from '../assets/Geethakumari.png';
 import devi2 from '../assets/devi2.jpg';
 import des from '../assets/des.png'
-import annadhanm from '../assets/vzhipad/annadhanm.jpeg';
-import kunjoon from '../assets/vzhipad/kunjoon.jpeg';
-import pongala from '../assets/vzhipad/pongala.jpeg';
-import thulabharam from '../assets/vzhipad/thulabharam.jpeg';
-import vilakku_kett from '../assets/vzhipad/vilakku_kett.jpeg';
+import annadhanm from '../assets/vzhipad/annadhanm1.jpeg';
+import kunjoon from '../assets/vzhipad/kunjoon1.jpeg';
+import pongala from '../assets/vzhipad/pongala1.jpeg';
+import thulabharam from '../assets/vzhipad/thulabharam1.jpeg';
+import vilakku_kett from '../assets/vzhipad/vilakku_kett1.jpeg';
 
 
 const Home = () => {
