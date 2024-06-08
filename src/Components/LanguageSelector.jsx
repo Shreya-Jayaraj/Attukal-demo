@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next';
 import './LanguageSelector.css'
 const languages = [
     {code:"en", lang: "English"},
-    {code:"mal", lang: "Malayalam"}
+    {code:"mal", lang: "മലയാളം "}
 ];
 
 const LanguageSelector = () => {

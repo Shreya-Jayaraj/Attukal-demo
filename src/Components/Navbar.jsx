@@ -3,6 +3,8 @@ import {NavLink, Link} from 'react-router-dom';
 import { useState } from 'react';
 import home from '../assets/home.png';
 import { useTranslation } from 'react-i18next';
+import LanguageSelector from './LanguageSelector';
+
 
 const Navbar = () => {
     
@@ -12,10 +14,12 @@ const Navbar = () => {
     return ( 
         <nav>
             <div className='left-section'>
-                <img src={home} alt="Home" className='home-icon' />
+                <Link to='/'><img src={home} alt="Home" className='home-icon' /></Link>
+                
                 <Link to='/' className={`title ${isMalayalam ? 'malayalam-content' : ''}`}>
                     {t("title")}
                 </Link>
+                <LanguageSelector />
             </div>  
 
             <div className='menu' onClick={() =>{

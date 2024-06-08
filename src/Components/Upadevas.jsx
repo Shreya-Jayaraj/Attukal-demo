@@ -1,94 +1,76 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+
 import shiva from "../assets/shiva2.png";
 import ganapathi from "../assets/ganapathi2.png";
 import nagar from "../assets/nagar2.png";
 import madan_thampuran from "../assets/madan_thamburan2.png";
 import './Upadevas.css';
 
-const Upadevas = () => {
-  const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3 ]);
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-  const handleNext = () => {
-    setPositionIndexes((prevIndexes) => {
-      const updatedIndexes = prevIndexes.map(
-        (prevIndex) => (prevIndex + 1) % 4
-      );
-      return updatedIndexes;
-    });
-  };
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-  const handleBack = () => {
-    setPositionIndexes((prevIndexes) => {
-      const updatedIndexes = prevIndexes.map(
-        (prevIndex) => (prevIndex + 3) % 4
-      );
-
-      return updatedIndexes;
-    });
-  };
-
-  const images = [
-    { src:shiva , name:'Lord Shiva' },
-    { src:ganapathi , name:'Lord Ganapathi' },
-    { src:madan_thampuran , name:'Lord Madan Thampuran' },
-    { src:nagar , name:'Lord Nagar' },
-    
-  ];
-
-  const positions = ["center", "left", "right", "right1"];
-
-  const imageVariants = {
-    center: { x: "0%", scale: 1, zIndex: 5 },
-    left: { x: "-50%", scale: 0.7, zIndex: 3 },
-    // left: { x: "-90%", scale: 0.5, zIndex: 2 },
-    right: { x: "90%", scale: 0.5, zIndex: 1 },
-    right1: { x: "50%", scale: 0.7, zIndex: 3 },
-  };
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 
+function Upadevas() {
   return (
-    <><h1>Upadevas</h1>
-    <div className="main-box">
+    <div className="container-upadevas">
+      <h1 className="heading-upadevas">UPADEVAS</h1>
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+        }}
+        pagination={{ el: '.swiper-pagination', clickable: true }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true,
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="swiper_container"
+      >
+        <SwiperSlide>
+          <img src={shiva} alt="slide_image" />
+          <div className="image-name-up">Lord Shiva</div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={ganapathi} alt="slide_image" />
+          <div className="image-name-up">Lord Ganpathi</div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={nagar} alt="slide_image" />
+          <div className="image-name-up">Lord Nagar</div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={madan_thampuran} alt="slide_image" />
+          <div className="image-name-up">Lord Madan Thampuran</div>
+        </SwiperSlide>
+        
 
-      <div className="flex-center-column">
-        {/* <h1>Upadevas</h1> */}
-
-        {images.map((image, index) => (
-          <motion.div
-            key={index}
-            className="image-container"
-            initial="center"
-            animate={positions[positionIndexes[index]]}
-            variants={imageVariants}
-            transition={{ duration: 0.5 }}
-          >
-            <img
-              src={image.src}
-              alt={image.name}
-              className="motion-img" />
-            <div className="image-name">{image.name}</div>
-          </motion.div>
-        ))}
-        <div className="button-container">
-          <button
-            className="custom-button"
-            onClick={handleBack}
-          >
-            Back
-          </button>
-          <button
-            className="custom-button"
-            onClick={handleNext}
-          >
-            Next
-          </button>
+        <div className="slider-controler">
+          <div className="swiper-button-prev slider-arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </div>
+          <div className="swiper-button-next slider-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+          <div className="swiper-pagination"></div>
         </div>
-
-      </div>
-    </div></>
+      </Swiper>
+    </div>
   );
-};
+}
 
 export default Upadevas;
-

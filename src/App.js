@@ -37,7 +37,7 @@ function App() {
       <div className="App">
         <Navbar/>
         <div className='content'>
-          <LanguageSelector/>
+          {/* <LanguageSelector/> */}
           <Routes>
             <Route path='/' element = {<Home/>}/>
             <Route path='/origin&history' element = {<OriginandHistory/>}/>

@@ -10,12 +10,14 @@ nav{
     position: sticky;
     top:0;
     z-index:10;
+    flex-wrap: wrap;
 }
 
 .left-section {
     display: flex;
     align-items: center;
     margin-right: 0px;
+    flex-wrap: wrap;
 }
 
 nav .title{
@@ -25,9 +27,7 @@ nav .title{
     font-weight:bold;
     text-decoration: none;
     color: white;
-    text-align: left;
-    
-    
+    text-align: left;  
 }
 .home-icon {
     margin-right: 10px;

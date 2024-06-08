@@ -1,140 +1,161 @@
-/* .main-box{
-    max-width:auto;
-    height: auto;
-} */
-/* .main-box {
-    padding-top: 20px;
-    align-items: center; }
-   
-.main-box h1{
-    margin: 0;
-    display: center;
-    padding: 10px;
-    color:black;
-    align-items: center;
-} */
-h1{
-    margin: 0;
-    display: flex;
-    padding: 10px;
-    color:maroon;
-    /* align-items: center; */
-    justify-content: center;
-    font-size: 3rem;
-    
-}
 
-.flex-center-column {
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    /* justify-content: center; */
-    justify-content: flex-start;
-    /* background-color: maroon; */
-    height: 75vh;
-    /* min-height:100vh; */
-    max-height: auto;
-    position: relative;
-    padding-top:50px;
-  
-}
-
-
-
-
-.image-container{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 42%;
-    height: 60%;
-    /* min-width: 200px; */
-    margin: 10px 0;
-    transition: width 0.3s ease;
-
-    
-}
-.image-name {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: black; /* Add the color you want for the text */
+  ::-webkit-scrollbar {
+    width: 1.3rem;
   }
-.motion-img {
-    border-radius: 12px;
-    max-width:100%;
-    height:auto;
-    /* object-fit: cover; */
-    /* position: absolute; */
-}
-
-
-.button-container {
-    display: flex;
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #797979;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #222224;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f9f9f9;
+  }
+  
+  .container-upadevas {
+    max-width: 124rem;
+    padding: 1rem 1rem;
+    margin: 0 auto;
+  }
+  
+  .heading-upadevas {
+    padding: 1rem 0;
+    font-size: 3.5rem;
+    text-align: center;
+    color: maroon;
+  }
+  .image-name-up {
     position: absolute;
-    bottom: 5px;
-    width: auto;
-    justify-content: space-around;
-    bottom:25px;
-    gap:12px
-}
-
-.custom-button {
-    border:none;
-    outline: none;
-    background: rgb(183, 0, 0);
-    color:#fff;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.custom-button:hover {
-    background-color: rgb(150,0,0); /* Darker indigo on hover */
-}
-
-@media (max-width: 1024px) {
-    .motion-img {
-        width: 60%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Background color for better readability */
+    padding: 1rem 0; /* Adjust padding as needed */
+  }
+  .swiper_container {
+    height: 42rem; /* Reduced height to make images smaller */
+    padding: 2rem 0;
+    position: relative;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem; /* Reduced width to make images smaller */
+    height: 35rem; /* Reduced height to make images smaller */
+    position: relative;
+    flex-direction: column;
+    
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    max-height: 100%; /* Added max-height property */
+    border-radius: 2rem;
+    object-fit: contain;
+  }
+  
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    display: none;
+  }
+  
+  
+  
+  .slider-controler {
+    position: relative;
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slider-controler .swiper-button-next {
+    left: 58% !important;
+    transform: translateX(-58%) !important;
+  }
+  
+  @media (max-width: 990px) {
+    .slider-controler .swiper-button-next {
+      left: 70% !important;
+      transform: translateX(-70%) !important;
     }
-    .image-name {
-        font-size: 0.75rem;
-        color: black; /* Add the color you want for the text */
-      }
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (max-width: 768px) {
-    .motion-img {
-        width: 70%;
-        
+  }
+  
+  @media (max-width: 450px) {
+    .slider-controler .swiper-button-next {
+      left: 80% !important;
+      transform: translateX(-80%) !important;
     }
-    .image-name {
-        font-size: 0.75rem;
-        color: black; /* Add the color you want for the text */
-      }
-}
-
-/* Extra small devices (phones, less than 576px) */
-@media (max-width: 576px) {
-    .motion-img {
-        width: 90%;
-        max-height: 200px;
-        max-width: 500px;
-        
+  }
+  
+  @media (max-width: 990px) {
+    .slider-controler .swiper-button-prev {
+      left: 30% !important;
+      transform: translateX(-30%) !important;
     }
-    .image-name {
-        font-size: 0.75rem;
-        color: black; /* Add the color you want for the text */
-      }
-
-    .custom-button {
-        padding: 8px 16px;
+  }
+  
+  @media (max-width: 450px) {
+    .slider-controler .swiper-button-prev {
+      left: 20% !important;
+      transform: translateX(-20%) !important;
     }
-
-    .button-container {
-        flex-direction: column;
-        bottom: 40px;
+  }
+  
+  .slider-controler .slider-arrow {
+    background: var(--white);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    left: 42%;
+    transform: translateX(-42%);
+    filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+  }
+  
+  .slider-controler .slider-arrow ion-icon {
+    font-size: 2rem;
+    color: #222224;
+  }
+  
+  .slider-controler .slider-arrow::after {
+    content: '';
+  }
+  
+  .swiper-pagination {
+    position: relative;
+    width: 15rem !important;
+    bottom: 1rem;
+  }
+  
+  .swiper-pagination .swiper-pagination-bullet {
+    filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+  }
+  
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background: var(--primary);
+  }
+  
+  @media (max-width: 500px) {
+    .swiper_container {
+      height: 32rem; /* Reduced height for smaller screens */
     }
-}
+    .swiper-slide {
+      width: 20rem !important; /* Reduced width for smaller screens */
+      height: 25rem !important; /* Reduced height for smaller screens */
+    }
+    .swiper-slide img {
+      width: 20rem !important; /* Reduced width for smaller screens */
+      height: 25rem !important; /* Reduced height for smaller screens */
+    }
+  }
+  
