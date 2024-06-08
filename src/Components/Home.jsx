@@ -203,6 +203,29 @@ const Home = () => {
             </div>
           </div>
       </div>
+
+      <div className="marquee-container">
+                <div className="marquee-content">
+                    Annadhanam is a sacred tradition where food is offered to the needy as an act of devotion and compassion. It is considered one of the highest forms of charity in Hinduism. Join us in this noble cause to serve and uplift the community.
+                </div>
+          </div>
+          
+
+        <div ref={vazhipad1Ref} className="image-gallery-section">
+          <h2 className="gallery-heading" >IMPORTANT VAZHIPADUKAL</h2>
+                {galleryImages.map((image, i) => (
+                    <div key={i} className="image-card">
+                        <img src={image.src} alt={image.title} />
+                        <div className="image-overlay">
+                            <h3>{image.title}</h3>
+                            <p>{image.description}</p>
+                        </div>
+                    </div>
+                ))}
+                <div className="book-now-container">
+                <button className="book-now-btn" onClick={handleBookNowClick}>Book Now</button>
+                </div>
+            </div>
         <div className="gallery-container">
             <Gallery  />
         </div>
@@ -234,28 +257,7 @@ const Home = () => {
             </div>
         
         
-        <div className="marquee-container">
-                <div className="marquee-content">
-                    Annadhanam is a sacred tradition where food is offered to the needy as an act of devotion and compassion. It is considered one of the highest forms of charity in Hinduism. Join us in this noble cause to serve and uplift the community.
-                </div>
-          </div>
-          
-
-        <div ref={vazhipad1Ref} className="image-gallery-section">
-          <h2 className="gallery-heading" >IMPORTANT VAZHIPADUKAL</h2>
-                {galleryImages.map((image, i) => (
-                    <div key={i} className="image-card">
-                        <img src={image.src} alt={image.title} />
-                        <div className="image-overlay">
-                            <h3>{image.title}</h3>
-                            <p>{image.description}</p>
-                        </div>
-                    </div>
-                ))}
-                <div className="book-now-container">
-                <button className="book-now-btn" onClick={handleBookNowClick}>Book Now</button>
-                </div>
-            </div>
+        
             
 
         <div ref={vazhipadRef} className={`vazhipad-container hidden ${isMalayalam ? 'malayalam-content' : ''}`}>
