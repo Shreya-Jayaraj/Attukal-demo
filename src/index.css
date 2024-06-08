@@ -31,12 +31,11 @@ html, body {
   background-image: url('./assets/bg.jpg');
   background-position: center;
   opacity: 0.3; 
-  z-index: -3; 
+  z-index: -10; 
 }
 
 .content{
   flex: 1;
-  padding: 2vh;
 }
 
 a{
