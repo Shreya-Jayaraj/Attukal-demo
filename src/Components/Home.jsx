@@ -207,7 +207,7 @@ const Home = () => {
           </div>
           
 
-        <div ref={vazhipad1Ref} className="image-gallery-section">
+        <div  className="image-gallery-section">
           <h2 className="gallery-heading" >IMPORTANT VAZHIPADUKAL</h2>
                 {galleryImages.map((image, i) => (
                     <div key={i} className="image-card">
