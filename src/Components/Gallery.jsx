@@ -112,12 +112,12 @@ import "slick-carousel/slick/slick-theme.css";
 // import firstDayKappuKett from '../assets/gallery/FIRST DAY- KAPPU KETT.JPG';
 // import kathirKalaPic2 from '../assets/gallery/KATHIR KALA PIC 2.JPG';
 
-import image1 from '../assets/gal3/1.jpg';
-import image2 from '../assets/gal3/2.jpg';
-import crowd from '../assets/gal3/CROWD.jpg';
-import ezhunnalipp from '../assets/gal3/EZHUNNALIPP.jpg';
-import firstDayKappuKett from '../assets/gal3/FIRST DAY- KAPPU KETT.jpg';
-import kathirKalaPic2 from '../assets/gal3/KATHIR KALA PIC 2.jpg';
+import image1 from '../assets/gal5/1.png';
+import image2 from '../assets/gal5/2.png';
+import crowd from '../assets/gal5/CROWD.png';
+import ezhunnalipp from '../assets/gal5/EZHUNNALIPP.jpg';
+import firstDayKappuKett from '../assets/gal5/FIRST DAY- KAPPU KETT.png';
+// import kathirKalaPic2 from '../assets/gal3/KATHIR KALA PIC 2.jpg';
 
 
 const Gallery = () => {
@@ -140,9 +140,9 @@ const Gallery = () => {
     {
       original: firstDayKappuKett,
     },
-    {
-      original: kathirKalaPic2,
-    },
+    // {
+    //   original: kathirKalaPic2,
+    // },
   ];
 
   const settings = {

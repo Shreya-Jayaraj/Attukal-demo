@@ -176,6 +176,7 @@ nav ul li a:not(.active):hover {
     nav {
         flex-direction: column;
         align-items: flex-start;
+        
     }
 
     nav ul {
@@ -206,24 +207,36 @@ nav ul li a:not(.active):hover {
     }
 
     .left-section {
-        width: 100%;
-        justify-content: space-between;
+        width: 75%;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
     }
 
     nav .title {
         flex: 1;
         text-align: center;
+        font-size: 0.7rem;
+    }
+
+    .language-selector{
+        text-align: left;
     }
 }
 
 @media (max-width: 480px) {
     nav .title {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
     }
 
     .home-icon {
         width: 25px;
         height: 25px;
+    }
+
+    .left-section{
+        align-items: center;
+        text-align: left;
     }
 
     .lang-btn button {
