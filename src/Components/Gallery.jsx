@@ -97,23 +97,28 @@
 
 // export default Gallery;
 
-
 import React from 'react';
 import Slider from 'react-slick';
+import LazyLoad from 'react-lazyload';
 import './Gallery.css'; 
 import { useTranslation } from 'react-i18next';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from '../assets/gallery/1.JPG';
-import image2 from '../assets/gallery/2.JPG';
-import crowd from '../assets/gallery/CROWD.JPG';
-import ezhunnalipp from '../assets/gallery/EZHUNNALIPP.JPG';
-import firstDayKappuKett from '../assets/gallery/FIRST DAY- KAPPU KETT.JPG';
-import kathirKalaPic2 from '../assets/gallery/KATHIR KALA PIC 2.JPG';
-import kuthiyottam from '../assets/gallery/KUTHIYOTTAM.JPG';
-import lights from '../assets/gallery/LIGHTS.JPG';
-import pongalaDay from '../assets/gallery/PONGALA DAY.JPG';
-import vilakkuKett from '../assets/gallery/VILAKKU KETT.JPG';
+
+// import image1 from '../assets/gallery/1.JPG';
+// import image2 from '../assets/gallery/2.JPG';
+// import crowd from '../assets/gallery/CROWD.JPG';
+// import ezhunnalipp from '../assets/gallery/EZHUNNALIPP.JPG';
+// import firstDayKappuKett from '../assets/gallery/FIRST DAY- KAPPU KETT.JPG';
+// import kathirKalaPic2 from '../assets/gallery/KATHIR KALA PIC 2.JPG';
+
+import image1 from '../assets/gal2/1.jpg';
+import image2 from '../assets/gal2/2.jpg';
+import crowd from '../assets/gal2/CROWD.jpg';
+import ezhunnalipp from '../assets/gal2/EZHUNNALIPP.jpg';
+import firstDayKappuKett from '../assets/gal2/FIRST DAY- KAPPU KETT.jpg';
+import kathirKalaPic2 from '../assets/gal2/KATHIR KALA PIC 2.jpg';
+
 
 const Gallery = () => {
   const { t, i18n } = useTranslation('home');
@@ -143,6 +148,7 @@ const Gallery = () => {
   const settings = {
     dots: true,
     infinite: true,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -155,7 +161,7 @@ const Gallery = () => {
           slidesToScroll: 1,
           infinite: true,
           dots: true,
-        }
+        },
       },
       {
         breakpoint: 600,
@@ -163,19 +169,21 @@ const Gallery = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
-        }
-      }
+        },
+      },
     ],
     lazyLoad: 'ondemand'
   };
 
   return (
     <div className={`gallery ${isMalayalam ? 'malayalam-content' : ''}`}>
-      <h2>{t("gallery")}</h2>
+      <h2>{t('gallery')}</h2>
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="gallery-image-container">
-            <img src={image.original} alt={`Image ${index}`} className="gallery-image"/>
+            <LazyLoad height={200} offset={100}>
+              <img src={image.original} alt={`Image ${index}`} className="gallery-image" />
+            </LazyLoad>
           </div>
         ))}
       </Slider>
