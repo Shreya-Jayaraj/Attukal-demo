@@ -33,7 +33,7 @@
 }
 
 .animate-history {
-    animation: slideInFromRight 1s ease-out forwards;
+    animation: slideInFromLeft 1s ease-out forwards;
   }
  
   

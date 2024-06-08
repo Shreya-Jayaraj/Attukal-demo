@@ -215,9 +215,9 @@
 
 .image-card {
   position: relative;
-  width: calc(12.5% - 10px); /* 8 images per row for large screens */
+  width: calc(28% - 10px); /* 8 images per row for large screens */
   height: 0;
-  padding-bottom: 12.5%; /* Maintain aspect ratio */
+  padding-bottom: 28%; /* Maintain aspect ratio */
   overflow: hidden;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
