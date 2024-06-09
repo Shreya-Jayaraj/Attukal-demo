@@ -541,9 +541,10 @@
     margin-left: 0;
     text-align: center;
   }
+
   .right-side{
     flex-direction: column;
-    width: 50%;
+    width: 60%;
   }  
 } 
 

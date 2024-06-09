@@ -13,7 +13,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 10;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .left-section {
@@ -138,6 +138,10 @@ nav ul li a:not(.active):hover {
     background-color: rgb(183, 0, 0);
 }
 
+nav .malayalam-content{
+    font-size: 0.7rem;
+}
+
 
 @media (max-width: 768px) {
     nav .menu {
@@ -184,6 +188,10 @@ nav ul li a:not(.active):hover {
         flex: 1;
         text-align: center;
     }
+
+    nav .malayalam-content{
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -201,5 +209,9 @@ nav ul li a:not(.active):hover {
         margin: 0 3px;
         width: auto;
         flex: 1;
+    }
+
+    nav .malayalam-content{
+        font-size: 0.8rem;
     }
 }
