@@ -30,7 +30,7 @@ import vilakku_kett from '../assets/vzhipad/vilakku_kett1.jpeg';
 
 
 const Home = () => {
-  const { t, i18n } = useTranslation(['home', 'common', 'vazhipad', 'vazhipadcards', 'officebearers']);
+  const { t, i18n } = useTranslation(['home', 'common', 'vazhipad', 'vazhipadcards', 'officebearers', 'impvazhipads']);
   const vazhipads = t('vazhipads', { ns: 'vazhipadcards', returnObjects: true });
   const isMalayalam = i18n.language === 'mal';
 
@@ -42,14 +42,14 @@ const Home = () => {
     { nameKey: '4.name', positionKey: '4.position', image: ASanumodh },
     { nameKey: '5.name', positionKey: '5.position', image: Geethakumari },
   ];
-  const [galleryImages] = useState([
-    { title: 'Annadhanam', description: 'Description 1', src: annadhanm },
-    { title: 'Kunjoon', description: 'Description 2', src: kunjoon },
-    { title: 'Pongala', description: 'Description 3', src: pongala },
-    { title: 'Thulabharam', description: 'Description 3', src: thulabharam },
-    { title: 'Vilakku Kettu', description: 'Description 3', src: vilakku_kett }
-    
-]);
+  
+  const galleryImages = [
+    { titleKey: '0.title', descriptionKey: '0.description', image: annadhanm },
+    { titleKey: '1.title', descriptionKey: '1.description',image: kunjoon },
+    { titleKey: '2.title', descriptionKey: '2.description', image: pongala },
+    { titleKey: '3.title', descriptionKey: '3.description',image: thulabharam },
+    { titleKey: '4.title', descriptionKey: '4.description',image: vilakku_kett}, 
+  ];
 
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
@@ -202,26 +202,32 @@ const Home = () => {
 
       <div className="marquee-container">
                 <div className="marquee-content">
-                    Annadhanam is a sacred tradition where food is offered to the needy as an act of devotion and compassion. It is considered one of the highest forms of charity in Hinduism. Join us in this noble cause to serve and uplift the community.
+                {t('annadhanam')}
                 </div>
           </div>
+
           
 
-        <div  className="image-gallery-section">
-          <h2 className="gallery-heading" >IMPORTANT VAZHIPADUKAL</h2>
-                {galleryImages.map((image, i) => (
-                    <div key={i} className="image-card">
-                        <img src={image.src} alt={image.title} />
-                        <div className="image-overlay">
-                            <h3>{image.title}</h3>
-                            <p>{image.description}</p>
-                        </div>
-                    </div>
-                ))}
-                <div className="book-now-container">
-                <button className="book-now-btn" onClick={handleBookNowClick}>Book Now</button>
-                </div>
+              
+          <div className={`image-gallery-section ${isMalayalam ? 'malayalam-content' : ''}`}>
+            <h2 className="gallery-heading" >{t('vazhipadstitle', { ns: 'impvazhipads' })}</h2>
+            {galleryImages.map((images, i) => (
+              <div key={i} className="image-card">
+                <img src={images.image} alt={t(`galleryImages.${i}.image`, { ns: 'impvazhipads' })} />
+                  <div className="image-overlay">
+                    <h3>{t(`galleryImages.${i}.title`, { ns: 'impvazhipads' })}</h3>
+                    <p>{t(`galleryImages.${i}.description`, { ns: 'impvazhipads' })}</p>
+                  </div>
+              </div>
+            ))}
+            <div className="book-now-container">
+              <button className="book-now-btn" onClick={handleBookNowClick}>
+                {t('booknow', { ns: 'common' })}
+              </button>
             </div>
+          </div>
+
+
         <div className="gallery-container">
             <Gallery  />
         </div>
@@ -278,7 +284,7 @@ const Home = () => {
             </section>
         </div>
         <Modal show={showModal} onClose={closeModal} content={modalContent}/>
-        
+
 
         <div ref={officeRef} className={`office-bearers-container hidden ${isMalayalam ? 'malayalam-content' : ''}`}>
             <h2>{t('officeBearersTitle', { ns:'officebearers' })}</h2>
@@ -299,7 +305,7 @@ const Home = () => {
                 </button>
             </div>
         </div>
-
+  
         <div ref={amenitiesRef} className={`amenities hidden ${isMalayalam ? 'malayalam-content' : ''}`}>
             <div className="amenities-gallery">
                 <AmenitiesImages />

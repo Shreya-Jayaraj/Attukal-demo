@@ -76,7 +76,19 @@
   color: white;
 }
 
+@media (max-width: 786px) {
+
+  .announcements-parent {
+    width:60%;
+  }
+}
+
 @media (max-width: 480px) {
+
+  
+.announcements-parent {
+  width:100%;
+}
   .announcements {
     padding: 0.5rem;
   }

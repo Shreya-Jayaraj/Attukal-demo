@@ -1,0 +1,10 @@
+{
+  "vazhipadstitle": "Important Vazhipadukal",
+  "galleryImages": [
+    { "title": "Annadhanam", "description": "Description 1" },
+    { "title": "Kunjoon", "description": "Description 2"},
+    { "title": "Pongala", "description": "Description 3"},
+    { "title": "Thulabharam", "description": "Description 3" },
+    { "title": "Vilakku Kettu", "description": "Description 3" }
+  ]
+}
