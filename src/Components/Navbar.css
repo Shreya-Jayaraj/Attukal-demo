@@ -7,13 +7,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 5px;
     background-color: maroon;
-    flex-wrap: wrap;
     position: sticky;
     top: 0;
     z-index: 10;
-    font-size: 1rem;
 }
 
 .left-section {
@@ -25,12 +23,9 @@ nav {
 .home-icon {
     width: 30px;
     height: 30px;
-    margin-right: 10px;
 }
 
 nav .title {
-    font-size: 1.5rem;
-    margin-left: 0px;
     margin: 1rem;
     font-weight: bold;
     text-decoration: none;
@@ -41,27 +36,20 @@ nav .title {
 .language-selector {
     position: relative;
     display: flex;
-    /* margin-left: 1rem; */
 }
 
 .language-btn {
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: maroon;
-    padding: 0.5rem;
-    padding-top: 1.25rem;
-    
-    margin: 0 0.5rem;
-    border-radius: 0.5rem;
-    border: none;
-    font-size: 1rem;
+    border:none;
     cursor: pointer;
 }
 
 .language-icon {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 20px;
+    height: 20px;
 }
 
 .language-dropdown {
@@ -112,6 +100,7 @@ nav .menu span {
     height: 0.4rem;
     width: 100%;
     background-color: #fff;
+    margin:3px;
     border-radius: 0.2rem;
     display: block;
 }
@@ -130,7 +119,7 @@ nav ul li a {
     text-decoration: none;
     color: white;
     padding: 0.5rem;
-    margin: 0 0.5rem;
+    margin: 0 0.2rem;
     border-radius: 0.5rem;
 }
 
@@ -142,13 +131,18 @@ nav .malayalam-content{
     font-size: 0.7rem;
 }
 
+@media (max-width: 961px){
+    nav ul{
+        padding: 0px;
+    }
+}
 
 @media (max-width: 768px) {
     nav .menu {
         display: block;
     }
+
     nav {
-        flex-direction: column;
         align-items: flex-start;
     }
 
@@ -181,11 +175,10 @@ nav .malayalam-content{
 
     .left-section {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     nav .title {
-        flex: 1;
         text-align: center;
     }
 

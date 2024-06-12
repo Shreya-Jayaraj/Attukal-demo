@@ -1,11 +1,6 @@
- .home{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+*{
+  box-sizing: 'border-box';
 }
-
 
 @keyframes slideInFromLeft {
   0% {
@@ -28,6 +23,24 @@
   }
 }
 
+.home{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.first-line-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height:92vh;
+  flex-direction: column;
+}
+
 .first-line {
   width: 100%;
   height: 92vh;
@@ -40,21 +53,6 @@
   background: none;
 }
 
-/* .first-line::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
-              url('../assets/front8.png'); 
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9; 
-  z-index: -1; 
-} */
-
 .left-side-container{
   width:33%;
   display: flex;
@@ -62,13 +60,21 @@
   height:13rem;
 }
 
-.left-side {
+.right-side{  
+  width:33%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+.timings {
   background-color: white;
   box-shadow: 0 4px 8px rgba(128, 0, 0, 0.2);
   border: 2px solid maroon;
   text-align: center;
-  padding-top:1rem;
-  padding-bottom:1rem;
+  padding-top:0.4rem;
+  padding-bottom:0.4rem;
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
@@ -77,49 +83,48 @@
   width:70%;
 }
 
-.left-side:hover {
+.timings:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(128, 0, 0, 0.3);
 }
 
-.left-side h2 {
+.timings h4 {
   color: maroon;
-  padding: 0.3rem;
   font-family: 'Georgia', serif;
 }
 
-.left-text{
+.timings-text{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height:50%;
 }
 
-.left-side .malayalam-content{
-  font-size: 1rem;;
+.timings .malayalam-content{
+  font-size: 0.8rem;
 }
 
-.left-side p {
+.timings p {
   font-family: 'Arial', sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #333;
-  margin: 0.5rem 0;
+  line-height:1rem;
 }
 
-.left-side img{
+/* .timings img{
   width:80%;
   height:auto;
   display:flex
-}
+}  this was for the small maroon design*/
 
-.right-side{  
-  width:30%;
+.announcements-home{  
+  width:100%;
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; 
 }
+
 
 .image-flex{
   display:flex;
@@ -161,6 +166,30 @@
   font-size: 0.75rem;
   color: maroon;
   word-spacing: 6px;
+}
+
+
+.marquee-container {
+  max-width: 100%;
+  height:auto;
+  overflow: hidden;
+  background-color: #ffff;
+  padding: 10px 0;
+  margin: 10px 0;
+  border: 5px double maroon;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 45s linear infinite;
+  font-size: 18px;
+  color: #333;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 .gallery-container{
@@ -413,6 +442,9 @@
 }
 
 @media (max-width: 961px) {
+  .first-line-container{
+    height:auto;
+  }
   .first-line{
     width:100%;
     justify-content: center;
@@ -485,7 +517,6 @@
 
   .right-side {
     order: 2;
-    flex-direction: row;
     gap:20px;
     width:80%;
     
@@ -607,25 +638,3 @@
       padding: 8px 16px;
   }
 } */
-
-.marquee-container {
-  max-width: 100%;
-  overflow: hidden;
-  background-color: #ffff;
-  padding: 10px 0;
-  margin: 20px 0;
-  border: 5px double maroon;
-}
-
-.marquee-content {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee 45s linear infinite;
-  font-size: 18px;
-  color: #333;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}

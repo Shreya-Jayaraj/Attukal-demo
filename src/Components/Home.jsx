@@ -175,17 +175,10 @@ const Home = () => {
 
   return (
     <div className='home'>
+      <div className="first-line-container">
         <div className='first-line'>
           <div className="left-side-container">
-            <div className='left-side'>
-            <img src={des} alt="design-2"/>
-              <div className="left-text">
-                <h2 className={` ${isMalayalam ? 'malayalam-content' : ''}`}> <strong>{t("t-heading")}</strong> </h2>
-                <p>4:30 am - 12:30 pm</p>
-                <p>5:00 pm - 8:30pm</p>
-              </div>
-              <img src={des} alt="design-3"/>
-            </div>
+            
           </div>
           <div className="image-flex">
               <img src={devihome} alt="devi-image"></img>
@@ -196,15 +189,26 @@ const Home = () => {
               </div>
           </div>
           <div className='right-side'>
-            <Announcements />
+            <div className='timings'>
+              <div className="timings-text">
+                <h4 className={` ${isMalayalam ? 'malayalam-content' : ''}`}> <strong>{t("t-heading")}</strong> </h4>
+                <p>4:30 am - 12:30 pm</p>
+                <p>5:00 pm - 8:30pm</p>
+              </div>
+            </div>
+            <div className="announcements-home">
+              <Announcements />
+              </div>
           </div>
       </div>
 
       <div className="marquee-container">
-                <div className="marquee-content">
-                {t('annadhanam')}
-                </div>
-          </div>
+        <div className="marquee-content">
+          {t('annadhanam')}
+        </div>
+      </div>
+
+      </div>
 
           
 
