@@ -49,7 +49,6 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-around;
-  position: relative; 
   z-index: 1; 
   background: none;
   position:relative;
@@ -224,12 +223,9 @@
   gap: 10px;
   justify-content: center;
   margin: 20px 0;
-  /* border: 8px solid maroon;
-  border-radius: 10px; */
   width: 90%;
   max-width: 68.75rem;
   margin-bottom: 30px;
-  padding: 20px;
 }
 
 .gallery-heading {
