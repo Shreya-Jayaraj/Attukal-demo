@@ -187,7 +187,7 @@ const Home = () => {
               {galleryImages.map((images, i) => (
                 <div key={i} className="image-card">
                   <img src={images.image} alt={t(`galleryImages.${i}.image`, { ns: 'impvazhipads' })} />
-                    <div className="image-overlay">
+                    <div className="image-details">
                       <h3>{t(`galleryImages.${i}.title`, { ns: 'impvazhipads' })}</h3>
                       <p>{t(`galleryImages.${i}.description`, { ns: 'impvazhipads' })}</p>
                     </div>
