@@ -23,7 +23,7 @@ const Navbar = () => {
         <Link to='/' className={`title ${isMalayalam ? 'malayalam-content' : ''}`}>
           {t("title")}
         </Link>
-        <div className="language-selector" onClick={() => setDropdownOpen(!dropdownOpen)}>
+        {/* <div className="language-selector" onClick={() => setDropdownOpen(!dropdownOpen)}>
           <button className="language-btn">
             <img src={languageIcon} alt="Language" className="language-icon" />
           </button>
@@ -33,7 +33,7 @@ const Navbar = () => {
               <button onClick={() => handleLanguageChange('mal')}>Malayalam</button>
             </div>
           )}
-        </div>
+        </div> */}
       </div>  
 
       <div className='menu' onClick={() => setMenuOpen(!menuOpen)}>

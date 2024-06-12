@@ -11,6 +11,7 @@ import './Vazhipad.css';
 import './Home.css';
 import './History.css';
 import './OfficeBearers.css';
+import './LanguageSelector.css';
 import attukalvideo2 from '../assets/attukalvideo2.mp4';
 import guiness2 from '../assets/guinness2.png';
 import music from '../assets/music.mp3';
@@ -27,7 +28,7 @@ import kunjoon from '../assets/vzhipad/kunjoon1.jpeg';
 import pongala from '../assets/vzhipad/pongala1.jpeg';
 import thulabharam from '../assets/vzhipad/thulabharam1.jpeg';
 import vilakku_kett from '../assets/vzhipad/vilakku_kett1.jpeg';
-
+import LanguageSelector from "./LanguageSelector";
 
 const Home = () => {
   const { t, i18n } = useTranslation(['home', 'common', 'vazhipad', 'vazhipadcards', 'officebearers', 'impvazhipads']);
@@ -175,6 +176,9 @@ const Home = () => {
 
   return (
     <div className='home'>
+      <div className="language-selector">
+        <LanguageSelector/>
+      </div>
       <div className="first-line-container">
         <div className='first-line'>
           <div className="left-side-container">
@@ -205,8 +209,8 @@ const Home = () => {
                   <p>ശരണ്യേ ത്രയംബകേ ഗൗരി  നാരായണീ നമോസ്തുതേ॥</p>
               </div>
           </div>
-          
           <div className='right-side'>
+            
             <div className='timings'>
               <div className="timings-text">
                 <h4 className={` ${isMalayalam ? 'malayalam-content' : ''}`}> <strong>{t("t-heading")}</strong> </h4>
@@ -214,6 +218,7 @@ const Home = () => {
                 <p>5:00 pm - 8:30pm</p>
               </div>
             </div>
+
             <div className="announcements-home">
               <Announcements />
               </div>
