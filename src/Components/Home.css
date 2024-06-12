@@ -52,9 +52,9 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-around;
-  position: relative; 
   z-index: 1; 
   background: none;
+  position: relative;
 }
 
 .left-side-container{
