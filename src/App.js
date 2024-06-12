@@ -18,17 +18,17 @@ import LanguageSelector from './Components/LanguageSelector';
 
 function App() {
   
-  useEffect(() => {
-    const audio = new Audio(music);
-    audio.play().catch(error => {
-      console.error('Audio playback failed:', error);
-    });
+  // useEffect(() => {
+  //   const audio = new Audio(music);
+  //   audio.play().catch(error => {
+  //     console.error('Audio playback failed:', error);
+  //   });
 
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, []);
+  //   return () => {
+  //     audio.pause();
+  //     audio.currentTime = 0;
+  //   };
+  // }, []);
 
 
   return (    

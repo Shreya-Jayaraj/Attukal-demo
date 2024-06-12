@@ -1,18 +1,20 @@
-
 .active {
     background-color: rgb(84, 0, 0);
 }
 
 nav {
     display: flex;
-    height:8vh;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 5px;
+    padding: 0 20px; 
     background-color: maroon;
+    flex-wrap: nowrap;
     position: sticky;
     top: 0;
+    height: 8vh;
     z-index: 10;
+    font-size: 1.2rem;
+    box-sizing: border-box; 
 }
 
 .left-section {
@@ -27,70 +29,20 @@ nav {
 }
 
 nav .title {
-    margin: 1rem;
+    font-size: 1.3rem; 
+    margin-left: 0;
+    margin: 0 1rem; 
     font-weight: bold;
     text-decoration: none;
     color: white;
     text-align: left;
 }
 
-.language-selector {
-    position: relative;
-    display: flex;
-}
-
-.language-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: maroon;
-    border:none;
-    cursor: pointer;
-}
-
-.language-icon {
-    width: 20px;
-    height: 20px;
-}
-
-.language-dropdown {
-    display: none;
-    position: absolute;
-    background-color: maroon;
-    min-width: 160px;
-    z-index: 1;
-    right: 0;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-.language-dropdown button {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    background-color: maroon;
-    cursor: pointer;
-}
-
-.language-dropdown button:hover {
-    background-color: rgb(183, 0, 0);
-}
-
-.language-selector:hover .language-dropdown {
-    display: block;
-}
-
 nav .menu {
     display: none;
     position: absolute;
-    top: 0.75rem;
-    right: 0.5rem;
-    flex-direction: column;
+    top: 10px;
+    right: 10px;
     justify-content: space-between;
     width: 2.25rem;
     height: 2rem;
@@ -101,7 +53,7 @@ nav .menu span {
     height: 0.4rem;
     width: 100%;
     background-color: #fff;
-    margin:3px;
+    margin: 3px;
     border-radius: 0.2rem;
     display: block;
 }
@@ -109,6 +61,8 @@ nav .menu span {
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -128,8 +82,30 @@ nav ul li a:not(.active):hover {
     background-color: rgb(183, 0, 0);
 }
 
-nav .malayalam-content{
+nav .malayalam-content {
     font-size: 0.7rem;
+}
+
+@media (max-width: 1140px) and (min-width: 961px) {
+    nav {
+        font-size: 1rem; 
+        padding: 0 10px; 
+    }
+
+    nav .title {
+        font-size: 1.3rem; 
+        margin: 0 0.5rem; 
+    }
+
+    nav ul li a {
+        padding: 0.4rem; 
+        margin: 0 0.1rem; 
+    }
+
+    .home-icon {
+        width: 25px;
+        height: 25px;
+    }
 }
 
 @media (max-width: 961px) {
@@ -138,9 +114,10 @@ nav .malayalam-content{
     }
 
     nav {
+        flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
-        height:auto;
+        height: auto; 
+        padding: 10px 20px; 
     }
 
     nav ul {
@@ -164,22 +141,17 @@ nav .malayalam-content{
         margin: 0.2rem 0.5rem;
     }
 
-    .lang-btn {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
     .left-section {
         width: 100%;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
 
     nav .title {
+        flex: 1;
         text-align: center;
     }
 
-    nav .malayalam-content{
+    nav .malayalam-content {
         font-size: 1rem;
     }
 }
@@ -194,14 +166,7 @@ nav .malayalam-content{
         height: 25px;
     }
 
-    .lang-btn button {
-        padding: 5px;
-        margin: 0 3px;
-        width: auto;
-        flex: 1;
-    }
-
-    nav .malayalam-content{
+    nav .malayalam-content {
         font-size: 0.8rem;
     }
 }
