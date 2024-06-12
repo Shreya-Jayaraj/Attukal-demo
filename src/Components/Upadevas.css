@@ -1,12 +1,12 @@
 .container-upadevas {
-  max-width: 124rem;
+  max-width: 100%;
   padding: 1rem 1rem;
   margin: 0 auto;
 }
 
 .heading-upadevas {
   padding: 1rem 0;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   text-align: center;
   color: maroon;
 }
@@ -15,8 +15,8 @@
   font-weight: bold;
   font-size: 1.5rem;
   text-align: center;
-  margin-top: 10px; /* Add some margin-top to separate the text from the image */
-  color: maroon; /* Change text color as needed */
+  margin-top: 10px;
+  color: maroon; 
 }
 
 .swiper_container {
@@ -28,15 +28,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30rem; /* Adjust width as needed */
+  width: 30rem; 
   flex-direction: column;
-  margin-bottom: 40px; /* Add margin-bottom to create space for the text */
+  margin-bottom: 40px;
 }
 
 .swiper-slide img {
-  width: 100%;
-  border-radius: 2rem;
-  object-fit: contain;
+  max-width: 50%;  
+  object-fit: contain; 
+  margin: 0 auto;     
+  display: block;  
 }
 
 .swiper-slide-shadow-left,
@@ -55,34 +56,6 @@
 .slider-controler .swiper-button-next {
   left: 58% !important;
   transform: translateX(-58%) !important;
-}
-
-@media (max-width: 990px) {
-  .slider-controler .swiper-button-next {
-    left: 70% !important;
-    transform: translateX(-70%) !important;
-  }
-}
-
-@media (max-width: 450px) {
-  .slider-controler .swiper-button-next {
-    left: 80% !important;
-    transform: translateX(-80%) !important;
-  }
-}
-
-@media (max-width: 990px) {
-  .slider-controler .swiper-button-prev {
-    left: 30% !important;
-    transform: translateX(-30%) !important;
-  }
-}
-
-@media (max-width: 450px) {
-  .slider-controler .swiper-button-prev {
-    left: 20% !important;
-    transform: translateX(-20%) !important;
-  }
 }
 
 .slider-controler .slider-arrow {
@@ -104,7 +77,38 @@
   content: '';
 }
 
-@media (max-width: 500px) {
+
+@media (max-width: 961px) {
+  .slider-controler .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+
+  .slider-controler .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+
+  .heading-upadevas{
+    font-size: 1.5rem;
+  }
+
+  .swiper-slide img {
+    max-width:100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-controler .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+
+  .slider-controler .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+
   .swiper_container {
     height: auto; /* Adjust height for smaller screens */
   }
