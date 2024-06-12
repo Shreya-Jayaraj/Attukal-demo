@@ -178,22 +178,22 @@ const Home = () => {
       <div className="first-line-container">
         <div className='first-line'>
           <div className="left-side-container">
-          <div className={`image-gallery-section ${isMalayalam ? 'malayalam-content' : ''}`}>
-            <h2 className="gallery-heading" >{t('vazhipadstitle', { ns: 'impvazhipads' })}</h2>
-            {galleryImages.map((images, i) => (
-              <div key={i} className="image-card">
-                <img src={images.image} alt={t(`galleryImages.${i}.image`, { ns: 'impvazhipads' })} />
-                  <div className="image-overlay">
-                    <h3>{t(`galleryImages.${i}.title`, { ns: 'impvazhipads' })}</h3>
-                    <p>{t(`galleryImages.${i}.description`, { ns: 'impvazhipads' })}</p>
-                  </div>
+            <div className={`image-gallery-section ${isMalayalam ? 'malayalam-content' : ''}`}>
+              <h2 className="gallery-heading" >{t('vazhipadstitle', { ns: 'impvazhipads' })}</h2>
+              {galleryImages.map((images, i) => (
+                <div key={i} className="image-card">
+                  <img src={images.image} alt={t(`galleryImages.${i}.image`, { ns: 'impvazhipads' })} />
+                    <div className="image-overlay">
+                      <h3>{t(`galleryImages.${i}.title`, { ns: 'impvazhipads' })}</h3>
+                      <p>{t(`galleryImages.${i}.description`, { ns: 'impvazhipads' })}</p>
+                    </div>
+                </div>
+              ))}
+              <div className="book-now-container">
+                <button className="book-now-btn" onClick={handleBookNowClick}>
+                  {t('booknow', { ns: 'common' })}
+                </button>
               </div>
-            ))}
-            <div className="book-now-container">
-              <button className="book-now-btn" onClick={handleBookNowClick}>
-                {t('booknow', { ns: 'common' })}
-              </button>
-            </div>
           </div>
             
           </div>
@@ -205,6 +205,7 @@ const Home = () => {
                   <p>ശരണ്യേ ത്രയംബകേ ഗൗരി  നാരായണീ നമോസ്തുതേ॥</p>
               </div>
           </div>
+          
           <div className='right-side'>
             <div className='timings'>
               <div className="timings-text">
@@ -217,13 +218,13 @@ const Home = () => {
               <Announcements />
               </div>
           </div>
-      </div>
-
-      <div className="marquee-container">
-        <div className="marquee-content">
-          {t('annadhanam')}
         </div>
-      </div>
+
+        <div className="marquee-container">
+          <div className="marquee-content">
+            {t('annadhanam')}
+          </div>
+        </div>
 
       </div>
 
