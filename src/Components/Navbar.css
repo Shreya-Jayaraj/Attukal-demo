@@ -83,7 +83,7 @@ nav ul li a:not(.active):hover {
 }
 
 nav .malayalam-content {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 1140px) and (min-width: 961px) {
@@ -105,6 +105,10 @@ nav .malayalam-content {
     .home-icon {
         width: 25px;
         height: 25px;
+    }
+
+    nav .malayalam-content {
+        font-size: 0.7rem;
     }
 }
 
@@ -164,9 +168,5 @@ nav .malayalam-content {
     .home-icon {
         width: 25px;
         height: 25px;
-    }
-
-    nav .malayalam-content {
-        font-size: 0.8rem;
     }
 }

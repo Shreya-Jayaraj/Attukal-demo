@@ -67,16 +67,24 @@
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: center; 
   padding:20px;
 }
 
-.language-selector{
+/* .language-selector{
   margin:3px;
   top:20px;
   right:20px;
   position: float;
   z-index: 2;
+} */
+
+.language-selector {
+  position: absolute;
+  top: 80px;
+  right:0px;
+  z-index:100;
+  width: 33%;
 }
 
 .timings {
@@ -491,6 +499,9 @@
     height: fit-content;
   }
   
+  .language-selector {
+    width:auto;
+  }
 
   .announcements-home{
     width:80%;

@@ -1,4 +1,4 @@
-.lang-btn{
+/* .lang-btn{
     display: flex;
     justify-content: center;
     gap:20px;
@@ -39,5 +39,38 @@
         margin: 0 3px;
         width: auto;
         flex:1;
+    }
+} */
+
+.lang-btn {
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-btn button {
+    margin-bottom: 5px;
+    background-color:maroon;
+    color: white;
+    border: 1px solid maroon;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.lang-btn button:hover {
+    background-color:rgb(91, 1, 1);
+}
+
+.lang-btn .selected{
+    background-color: rgb(91, 1, 1)
+}
+
+@media (max-width:961px){
+    .lang-btn{
+        gap:0.5rem;
     }
 }
