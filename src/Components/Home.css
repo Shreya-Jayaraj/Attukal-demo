@@ -61,7 +61,7 @@
   width:33%;
   display: flex;
   justify-content: center;
-  height:13rem;
+  
 }
 
 .right-side{  
@@ -223,8 +223,8 @@
   gap: 10px;
   justify-content: center;
   margin: 20px 0;
-  border: 8px solid maroon;
-  border-radius: 10px;
+  /* border: 8px solid maroon;
+  border-radius: 10px; */
   width: 90%;
   max-width: 68.75rem;
   margin-bottom: 30px;
