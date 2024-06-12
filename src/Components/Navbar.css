@@ -17,7 +17,7 @@ nav {
 .left-section {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .home-icon {
@@ -131,13 +131,7 @@ nav .malayalam-content{
     font-size: 0.7rem;
 }
 
-@media (max-width: 961px){
-    nav ul{
-        padding: 0px;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 961px) {
     nav .menu {
         display: block;
     }

@@ -23,6 +23,11 @@
   }
 }
 
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
 .home{
   min-height: 100vh;
   display: flex;
@@ -43,7 +48,6 @@
 
 .first-line {
   width: 100%;
-  height: 92vh;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -65,7 +69,7 @@
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: space-around; 
 }
 
 .timings {
@@ -142,7 +146,6 @@
   border-radius: 12px;
   text-align: center;
   font-size: 15px;
-  font-weight: 2px;
   color:black;
   background-color:#f9f9f9;
   padding:4px 4px;
@@ -168,15 +171,15 @@
   word-spacing: 6px;
 }
 
-
 .marquee-container {
   max-width: 100%;
   height:auto;
   overflow: hidden;
   background-color: #ffff;
   padding: 10px 0;
-  margin: 10px 0;
+  margin-top: 10px;
   border: 5px double maroon;
+  bottom:0px;
 }
 
 .marquee-content {
@@ -185,11 +188,6 @@
   animation: marquee 45s linear infinite;
   font-size: 18px;
   color: #333;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
 }
 
 .gallery-container{
@@ -442,6 +440,7 @@
   .first-line-container{
     height:auto;
   }
+  
   .first-line{
     width:100%;
     justify-content: center;
@@ -450,12 +449,25 @@
     height:auto;
   }
 
-  .image {
-    max-width: 100%; 
+  .image-flex{
+    max-height:100%;
   }
 
   .slogam{
     margin:10px;
+    width:100%;
+  }
+
+  .right-side {
+    order: 2;
+    gap:20px;
+    width:70%;
+  }
+
+  .left-side-container {
+    order: 3;
+    width:80%;
+    height: fit-content;
   }
 
   .gallery h2{
@@ -506,36 +518,10 @@
     margin-left: 0;
     text-align: center;
   }
-
-  .image-flex {
-    order: 1; 
-    width:60%
-  }
-
-  .right-side {
-    order: 2;
-    gap:20px;
-    width:80%;
-    
-  }
-
-  .left-side-container {
-    order: 3;
-    width:80%;
-    height: fit-content;
-  }
 }
 
 
 @media screen and (max-width: 600px) {
-  .image {
-    max-width: 100%; 
-  }
-
-  .slogam{
-    margin:10px;
-  }
-
   .gallery{
     width:100%
   }
@@ -545,29 +531,6 @@
   }
   .amenities-text {
     font-size: 0.9rem;
-  }
-
-  .amenities-gallery{
-    margin-bottom: 0;
-    height:30%;
-    width: 90%
-  }
-  .awards {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-  }
-
-  .award-image {
-    width: 80%;
-    margin-bottom: 1.5rem;
-  }
-
-  .awards-content {
-    max-width: 100%;
-    margin-left: 0;
-    text-align: center;
   }
 
   .right-side{
