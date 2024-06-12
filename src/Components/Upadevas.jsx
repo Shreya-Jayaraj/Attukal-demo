@@ -4,10 +4,8 @@ import ganapathi from "../assets/ganapathi2.png";
 import nagar from "../assets/nagar2.png";
 import madan_thampuran from "../assets/madan_thamburan2.png";
 import './Upadevas.css';
-
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
