@@ -78,6 +78,7 @@ nav ul li a {
     padding: 0.5rem;
     margin: 0 0.2rem;
     border-radius: 0.5rem;
+    font-size: 0.9rem;
 }
 
 nav ul li a:not(.active):hover {
@@ -123,7 +124,7 @@ nav .malayalam-content {
         flex-direction: column;
         align-items: flex-start;
         height: auto; 
-        padding: 10px 20px; 
+        padding: 7px 20px; 
     }
 
     nav ul {
@@ -158,7 +159,7 @@ nav .malayalam-content {
     }
 
     nav .malayalam-content {
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
 }
 
@@ -170,5 +171,9 @@ nav .malayalam-content {
     .home-icon {
         width: 25px;
         height: 25px;
+    }
+
+    nav .malayalam-content {
+        font-size: 0.7rem;
     }
 }
