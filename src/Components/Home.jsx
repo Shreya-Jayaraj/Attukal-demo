@@ -189,7 +189,7 @@ const Home = () => {
                   <img src={images.image} alt={t(`galleryImages.${i}.image`, { ns: 'impvazhipads' })} />
                     <div className="image-details">
                       <h3>{t(`galleryImages.${i}.title`, { ns: 'impvazhipads' })}</h3>
-                      <p>{t(`galleryImages.${i}.description`, { ns: 'impvazhipads' })}</p>
+                      {/* <p>{t(`galleryImages.${i}.description`, { ns: 'impvazhipads' })}</p> */}
                     </div>
                 </div>
               ))}
