@@ -1,5 +1,5 @@
 import 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import Upadevas from './Components/Upadevas';
@@ -15,26 +15,25 @@ import AmenitiesPage from './Components/AmenitiesPage';
 import ScrollToTop from './Components/ScrollToTop';
 import music from '../src/assets/music.mp3';
 import LanguageSelector from './Components/LanguageSelector';
-
+import Popup from './Components/Popup';
 function App() {
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  useEffect(() => {
+    setPopupVisible(true); 
+  }, []);
+
+  const handleClosePopup = () => {
+    setPopupVisible(false); 
+  };
   
-  // useEffect(() => {
-  //   const audio = new Audio(music);
-  //   audio.play().catch(error => {
-  //     console.error('Audio playback failed:', error);
-  //   });
-
-  //   return () => {
-  //     audio.pause();
-  //     audio.currentTime = 0;
-  //   };
-  // }, []);
-
+  
 
   return (    
     <Router>
       <ScrollToTop />
       <div className="App">
+      <Popup isVisible={isPopupVisible} onClose={handleClosePopup} />
         <Navbar/>
         <div className='content'>
           {/* <LanguageSelector/> */}
