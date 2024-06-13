@@ -32,7 +32,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="App">
-      {/* <Popup isVisible={isPopupVisible} onClose={handleClosePopup} /> */}
+      <Popup isVisible={isPopupVisible} onClose={handleClosePopup} />
         <Navbar/>
         <div className='content'>
           {/* <LanguageSelector/> */}
