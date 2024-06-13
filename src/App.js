@@ -14,7 +14,6 @@ import OfficeBearers from './Components/OfficeBearers';
 import AmenitiesPage from './Components/AmenitiesPage';
 import ScrollToTop from './Components/ScrollToTop';
 import music from '../src/assets/music.mp3';
-import LanguageSelector from './Components/LanguageSelector';
 import Popup from './Components/Popup';
 function App() {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -33,7 +32,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="App">
-      <Popup isVisible={isPopupVisible} onClose={handleClosePopup} />
+      {/* <Popup isVisible={isPopupVisible} onClose={handleClosePopup} /> */}
         <Navbar/>
         <div className='content'>
           {/* <LanguageSelector/> */}
